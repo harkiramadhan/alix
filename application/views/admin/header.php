@@ -119,12 +119,12 @@
                 <small class="text-muted mb-2 mt-2">Gallery</small>
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link <?php if($this->uri->segment(1) == "backend" && $this->uri->segment(2) == "image"){echo "active";} ?>" href="<?= site_url('backend/gallery/image') ?>">
+                        <a class="nav-link <?php if($this->uri->segment(1) == "backend" && $this->uri->segment(2) == "gallery" && $this->uri->segment(3) == "image"){echo "active";} ?>" href="<?= site_url('backend/gallery/image') ?>">
                             <i class="ni ni-album-2 text-default"></i> Image
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link <?php if($this->uri->segment(1) == "backend" && $this->uri->segment(2) == "gallery"){echo "active";} ?>" href="<?= site_url('backend/gallery') ?>">
+                        <a class="nav-link <?php if($this->uri->segment(1) == "backend" && $this->uri->segment(2) == "gallery" && ($this->uri->segment(3) == NULL || $this->uri->segment(3) == "detail") ){echo "active";} ?>" href="<?= site_url('backend/gallery') ?>">
                             <i class="ni ni-camera-compact text-default"></i> Gallery
                         </a>
                     </li>
