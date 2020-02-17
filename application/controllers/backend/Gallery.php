@@ -46,6 +46,7 @@ class Gallery extends CI_Controller{
     function action(){
         $jenis = $this->input->post('jenis', TRUE);
         $idgallery = $this->input->post('idgallery', TRUE);
+        $idgambar = $this->input->post('idgambar', TRUE);
         if($jenis == "tambah"){
             $config['upload_path']      = './assets/home/img/content';  
             $config['allowed_types']    = 'jpg|jpeg|png|gif'; 
@@ -183,6 +184,8 @@ class Gallery extends CI_Controller{
                     redirect($_SERVER['HTTP_REFERER']);
                 }
             }
+        }elseif($jenis == "tambah_gambar"){
+            
         }
     }
 
