@@ -62,7 +62,12 @@ class User extends CI_Controller{
                 redirect($_SERVER['HTTP_REFERER']);
             }
         }elseif($jenis == "delete"){
-
+            $this->db->where('id', $iduser);
+            $this->db->delete('admin');
+            if($this->db->affected_rows() > 0){
+                $this->session->set_flashdata('sukses', "User Berhasil Di Delete");
+                redirect($_SERVER['HTTP_REFERER']);
+            }
         }
     }
 
@@ -125,7 +130,31 @@ class User extends CI_Controller{
                 </div>
                 <?php
             }elseif($jenis == "delete"){
-    
+                ?>
+                <div class="modal-content bg-gradient-danger">
+                    <div class="modal-header">
+                        <h6 class="modal-title" id="modal-title-notification">Hapus User <?= $user->email ?></h6>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="py-3 text-center">
+                            <i class="ni ni-bell-55 ni-3x"></i>
+                            <h4 class="heading mt-4">Apakah Anda Yakin Menghapus User</h4>
+                            <p><?= $user->email ?></p>
+                        </div>
+                    </div>
+                    <form action="<?= site_url('backend/user/action') ?>" method="post">
+                    <input type="hidden" name="iduser" value="<?= $iduser ?>">
+                    <input type="hidden" name="jenis" value="delete">
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-sm btn-link text-white" data-dismiss="modal">Tutup</button> 
+                        <button type="submit" class="btn btn-sm btn-white ml-auto">Ya, Lanjutkan</button>
+                    </div>
+                    </form>
+                </div>
+                <?php
             }
         }
     }
