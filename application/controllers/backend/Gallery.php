@@ -24,6 +24,15 @@ class Gallery extends CI_Controller{
         $this->load->view('admin/footer');
     }
 
+    function image(){
+        $data['title'] = "Image - Al Hikmah";
+        $data['nama'] = $this->session('email');
+
+        $this->load->view('admin/header', $data);
+        $this->load->view('admin/image');
+        $this->load->view('admin/footer');
+    }
+
     function detail($idgallery){
         $data['title'] = "Detail Gallery - Al Hikmah";
         $data['nama'] = $this->session('email');

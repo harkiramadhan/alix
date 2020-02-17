@@ -119,8 +119,22 @@
                 <small class="text-muted mb-2 mt-2">Gallery</small>
                 <ul class="navbar-nav">
                     <li class="nav-item">
+                        <a class="nav-link <?php if($this->uri->segment(1) == "backend" && $this->uri->segment(2) == "image"){echo "active";} ?>" href="<?= site_url('backend/gallery/image') ?>">
+                            <i class="ni ni-album-2 text-default"></i> Image
+                        </a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link <?php if($this->uri->segment(1) == "backend" && $this->uri->segment(2) == "gallery"){echo "active";} ?>" href="<?= site_url('backend/gallery') ?>">
                             <i class="ni ni-camera-compact text-default"></i> Gallery
+                        </a>
+                    </li>
+                </ul>
+                <hr class="my-2">
+                <small class="text-muted mb-2 mt-2">PPDB</small>
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link <?php if($this->uri->segment(1) == "backend" && $this->uri->segment(2) == "ppdb"){echo "active";} ?>" href="<?= site_url('backend/ppdb') ?>">
+                            <i class="ni ni-collection text-default"></i> PPDB
                         </a>
                     </li>
                 </ul>
