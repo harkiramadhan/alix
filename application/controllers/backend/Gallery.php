@@ -368,4 +368,42 @@ class Gallery extends CI_Controller{
         <?php
         }}
     }
+
+    function list_background(){
+        $background = $this->M_Gallery->get_background();
+        if($background->num_rows() > 0){
+            foreach($background->result() as $row){
+                ?>
+                    <div class="col-md-4 mt-3">
+                        <img id="<?= $row->id ?>" class="rounded image_<?= $row->id ?>" style="height: 100%; width: 100%; cursor:pointer" alt="image preview" src="<?= base_url('./assets/home/img/bg/' . $row->img) ?>">
+                        <script>
+                            $('.image_<?= $row->id ?>').click(function(){
+                                var idbackground = this.id;
+                                alert(idbackground);
+                            });
+                        </script>
+                    </div>
+                <?php
+            }
+        }
+    }
+
+    function list_slider(){
+        $slider = $this->M_Gallery->get_slider();
+        if($slider->num_rows() > 0){
+            foreach($slider->result() as $row){
+                ?>
+                    <div class="col-md-4 mt-3">
+                        <img id="<?= $row->id ?>" class="rounded image_<?= $row->id ?>" style="height: 100%; width: 100%; cursor:pointer" alt="image preview" src="<?= base_url('./assets/home/img/slide/' . $row->img) ?>">
+                        <script>
+                            $('.image_<?= $row->id ?>').click(function(){
+                                var idslider = this.id;
+                                alert(idslider);
+                            });
+                        </script>
+                    </div>
+                <?php
+            }
+        }
+    }
 }

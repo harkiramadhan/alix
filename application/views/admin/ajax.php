@@ -98,8 +98,34 @@
     }); 
 </script>
 
+<?php elseif($uri1 == "backend" && $uri2 == "gallery" && $uri3 == "image" && $uri4 == NULL): ?>
+<script>
+    $(document).ready(function(){
+        $.ajax({
+            url: '<?= site_url('backend/gallery/list_background') ?>',
+            type: 'POST',
+            beforeSend: function(){
+                $('.list_background').html("<div class='col-xl-12 text-center'><img src='<?= $loader ?>'></div>");
+            },
+            success: function(html){
+                $('.list_background').html(html);
+            }
+        });
+        $.ajax({
+            url: '<?= site_url('backend/gallery/list_slider') ?>',
+            type: 'POST',
+            beforeSend: function(){
+                $('.list_slider').html("<div class='col-xl-12 text-center'><img src='<?= $loader ?>'></div>");
+            },
+            success: function(html){
+                $('.list_slider').html(html);
+            }
+        });
+    }); 
+</script>
+
 <?php elseif($uri1 == "backend" && $uri2 == "user" && $uri3 == NULL): ?>
-    <script>
+<script>
     $(document).ready(function(){
         $.ajax({
             url: '<?= site_url('backend/user/table_list_user') ?>',

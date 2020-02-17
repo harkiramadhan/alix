@@ -23,7 +23,7 @@
                 </div>
             </div>   
             <div class="row list_background">
-                
+
             </div>
         </div>
         <div class="col-xl-12 mt-3">
@@ -39,7 +39,7 @@
                     </div>
                 </div>
             </div>   
-            <div class="row list_background">
+            <div class="row list_slider">
                 
             </div>
         </div>

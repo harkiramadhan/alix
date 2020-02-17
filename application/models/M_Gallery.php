@@ -35,4 +35,20 @@ class M_Gallery extends CI_Model{
         $this->db->where(['id_gallery'=>$idgallery]);
         return $this->db->get();
     }
+
+    // Background
+    function get_background(){
+        $this->db->select('*');
+        $this->db->from('gambar');
+        $this->db->where('jenis', 'bg');
+        return $this->db->get();
+    }
+
+    // Slider
+    function get_slider(){
+        $this->db->select('*');
+        $this->db->from('gambar');
+        $this->db->where('jenis', 'slider');
+        return $this->db->get();
+    }
 }
