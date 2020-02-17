@@ -39,12 +39,22 @@ class User extends CI_Controller{
                 redirect($_SERVER['HTTP_REFERER']);
             }
         }elseif($jenis == "edit"){
-            $data = [
-                'email' => $this->input->post('email', TRUE),
-                'role' => $this->input->post('role', TRUE),
-                'password' => md5($this->input->post('password', TRUE)),
-                'status' => $this->input->post('status', TRUE)
-            ];
+            $password = $this->input->post('password', TRUE);
+            if($password == TRUE){
+                $data = [
+                    'email' => $this->input->post('email', TRUE),
+                    'role' => $this->input->post('role', TRUE),
+                    'password' => md5($this->input->post('password', TRUE)),
+                    'status' => $this->input->post('status', TRUE)
+                ];
+            }else{
+                $data = [
+                    'email' => $this->input->post('email', TRUE),
+                    'role' => $this->input->post('role', TRUE),
+                    'status' => $this->input->post('status', TRUE)
+                ];
+            }
+            
             $this->db->where('id', $iduser);
             $this->db->update('admin', $data);
             if($this->db->affected_rows() > 0){
@@ -53,6 +63,70 @@ class User extends CI_Controller{
             }
         }elseif($jenis == "delete"){
 
+        }
+    }
+
+    function modal(){
+        $jenis = $this->input->post('type', TRUE);
+        $iduser = $this->input->post('iduser', TRUE);
+        $getUser = $this->M_Admin->get_byId($iduser);
+        if($getUser->num_rows() > 0){
+            $user = $getUser->row();
+            if($jenis == "edit"){
+                ?>
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Detail User - <?= $user->email ?></h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <form action="<?= site_url('backend/user/action') ?>" method="POST">
+                        <input type="hidden" name="jenis" value="edit">
+                        <input type="hidden" name="iduser" value="<?= $user->id ?>">
+                        <div class="modal-body bg-secondary">
+                            <div class="form-group">
+                                <label for="">Username / Email <small class="text-warning">*</small></label>
+                                <input type="text" class="form-control form-control-alternative form-control-sm" name="email" placeholder="Username / Email" value="<?= $user->email ?>" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="">Role <small class="text-warning">*</small></label>
+                                <select name="role"  class="form-control form-control-sm form-control-alternative" required>
+                                    <option value="">- Pilih Role -</option>
+                                    <option value="1"  <?php if($user->role == "1"){echo "selected";} ?>>Admin Website</option>
+                                    <option value="2"  <?php if($user->role == "2"){echo "selected";} ?>>Admin PPDB</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="">Status <small class="text-warning">*</small></label>
+                                <select name="status"  class="form-control form-control-sm form-control-alternative" required>
+                                    <option value="">- Pilih Status -</option>
+                                    <option value="active" <?php if($user->status == "active"){echo "selected";} ?>>Active</option>
+                                    <option value="-" <?php if($user->status == "-"){echo "selected";} ?>>Non Active</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="">Password <small class="text-warning">*</small></label>
+                                <input type="password" id="pas" name="password"  class="form-control form-control-alternative form-control-sm">
+                            </div>
+                            <div class="custom-control custom-control-alternative custom-checkbox">
+                                <input class="custom-control-input" id="customCheckLogin" type="checkbox">
+                                <label class="custom-control-label" for="customCheckLogin">
+                                    <span class="text-muted">Lihat Password</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Tutup</button>
+                            <button type="submit" class="btn btn-primary btn-sm">Simpan</button>
+                        </div>
+                        </form>
+                    </div>
+                </div>
+                <?php
+            }elseif($jenis == "delete"){
+    
+            }
         }
     }
 
@@ -76,7 +150,7 @@ class User extends CI_Controller{
                 <td><?= $row->status ?></td>
                 <td>
                     <div class="btn-group">
-                        <button class="btn btn-sm btn-primary edit_<?= $row->id ?>">Edit</button>
+                        <button class="btn btn-sm btn-primary edit_<?= $row->id ?>" id="<?= $row->id ?>">Edit</button>
                         <button class="btn btn-sm btn-danger  ml-1 hapus_<?= $row->id ?>" id="<?= $row->id ?>">Hapus</button>
                     </div>
                 </td>
@@ -94,7 +168,7 @@ class User extends CI_Controller{
                             type: 'post',
                             data: {iduser : iduser, type : type},
                             beforeSend: function(){
-                                $('#modalLihat').modal('show');
+                                $('#modalEdit').modal('show');
                                 $('.isi').html("<div class='col-xl-12 text-center'><img src='<?= $loader ?>'></div>");
                             },
                             success: function(html){

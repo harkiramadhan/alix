@@ -64,7 +64,7 @@
                     </div>
                     <div class="form-group">
                         <label for="">Role <small class="text-warning">*</small></label>
-                        <select name="role" id="" class="form-control form-control-sm form-control-alternative" required>
+                        <select name="role"  class="form-control form-control-sm form-control-alternative" required>
                             <option value="">- Pilih Role -</option>
                             <option value="1">Admin Website</option>
                             <option value="2">Admin PPDB</option>
@@ -72,7 +72,7 @@
                     </div>
                     <div class="form-group">
                         <label for="">Status <small class="text-warning">*</small></label>
-                        <select name="status" id="" class="form-control form-control-sm form-control-alternative" required>
+                        <select name="status"  class="form-control form-control-sm form-control-alternative" required>
                             <option value="">- Pilih Status -</option>
                             <option value="active">Active</option>
                             <option value="-">Non Active</option>
@@ -80,7 +80,7 @@
                     </div>
                     <div class="form-group">
                         <label for="">Password <small class="text-warning">*</small></label>
-                        <input type="password" id="pas" name="password" id="" class="form-control form-control-alternative form-control-sm" required>
+                        <input type="password" id="pas" name="password"  class="form-control form-control-alternative form-control-sm" required>
                     </div>
                     <div class="custom-control custom-control-alternative custom-checkbox">
                         <input class="custom-control-input" id="customCheckLogin" type="checkbox">
