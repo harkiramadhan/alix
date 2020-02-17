@@ -17,6 +17,14 @@ class M_Admin extends CI_Model{
     function get_AllUser(){
         $this->db->select('*');
         $this->db->from('admin');
+        $this->db->order_by('email', "ASC");
+        return $this->db->get();
+    }
+
+    function get_byId($iduser){
+        $this->db->select('*');
+        $this->db->from('admin');
+        $this->db->where('id', $iduser);
         return $this->db->get();
     }
 

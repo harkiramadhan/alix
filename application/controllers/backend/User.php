@@ -23,6 +23,39 @@ class User extends CI_Controller{
         $this->load->view('admin/footer');
     }
 
+    function action(){
+        $jenis = $this->input->post('jenis', TRUE);
+        $iduser = $this->input->post('iduser', TRUE);
+        if($jenis == "tambah"){
+            $data = [
+                'email' => $this->input->post('email', TRUE),
+                'role' => $this->input->post('role', TRUE),
+                'password' => md5($this->input->post('password', TRUE)),
+                'status' => $this->input->post('status', TRUE)
+            ];
+            $this->db->insert('admin', $data);
+            if($this->db->affected_rows() > 0){
+                $this->session->set_flashdata('sukses', "User Berhasil Di Tambahkan");
+                redirect($_SERVER['HTTP_REFERER']);
+            }
+        }elseif($jenis == "edit"){
+            $data = [
+                'email' => $this->input->post('email', TRUE),
+                'role' => $this->input->post('role', TRUE),
+                'password' => md5($this->input->post('password', TRUE)),
+                'status' => $this->input->post('status', TRUE)
+            ];
+            $this->db->where('id', $iduser);
+            $this->db->update('admin', $data);
+            if($this->db->affected_rows() > 0){
+                $this->session->set_flashdata('sukses', "User Berhasil Di Edit");
+                redirect($_SERVER['HTTP_REFERER']);
+            }
+        }elseif($jenis == "delete"){
+
+        }
+    }
+
     // // // AJAX // // //
     function table_list_user(){
         $user = $this->M_Admin->get_AllUser()->result();

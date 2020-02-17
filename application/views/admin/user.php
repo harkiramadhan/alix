@@ -45,7 +45,7 @@
         </div>
       </div>
 
-    <!-- Modal Tambah Label-->
+    <!-- Modal Tambah User-->
     <div class="modal fade" id="tambah" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
             <div class="modal-content">
@@ -55,11 +55,11 @@
                     <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <form action="<?= site_url('backend/user/simpan') ?>" method="POST">
+                <form action="<?= site_url('backend/user/action') ?>" method="POST">
                 <input type="hidden" name="jenis" value="tambah">
                 <div class="modal-body bg-secondary">
                     <div class="form-group">
-                        <label for="">Username / Email</label>
+                        <label for="">Username / Email <small class="text-warning">*</small></label>
                         <input type="text" class="form-control form-control-alternative form-control-sm" name="email" placeholder="Username / Email" required>
                     </div>
                     <div class="form-group">
@@ -72,7 +72,7 @@
                     </div>
                     <div class="form-group">
                         <label for="">Status <small class="text-warning">*</small></label>
-                        <select name="role" id="" class="form-control form-control-sm form-control-alternative" required>
+                        <select name="status" id="" class="form-control form-control-sm form-control-alternative" required>
                             <option value="">- Pilih Status -</option>
                             <option value="active">Active</option>
                             <option value="-">Non Active</option>
@@ -96,4 +96,18 @@
                 </form>
             </div>
         </div>
+    </div>
+
+    <!-- Modal Edit User -->
+    <div class="modal fade" id="modalEdit" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg isi" role="document">
+            
+        </div>
+    </div>
+
+    <!-- Modal Delete User -->
+    <div class="modal fade" id="modalDelete" tabindex="-1" role="dialog" aria-labelledby="modal-notification" aria-hidden="true">
+      <div class="modal-dialog modal-danger modal-dialog-centered modal-10 isiDelete" role="document">
+        
+      </div>
     </div>
