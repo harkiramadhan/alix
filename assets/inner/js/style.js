@@ -121,3 +121,13 @@ function previewImage4() {
       document.getElementById("image-preview4").src = oFREvent.target.result;
     };
 };
+		
+$('#customCheckLogin').click(function(){
+    if($(this).is(':checked')){
+        $('#pas').attr('type','text');
+$('#pas2').attr('type','text');
+    }else{
+        $('#pas').attr('type','password');
+$('#pas2').attr('type','password');
+    }
+});

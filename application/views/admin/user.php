@@ -62,7 +62,7 @@
                         <label for="">Username / Email</label>
                         <input type="text" class="form-control form-control-alternative form-control-sm" name="email" placeholder="Username / Email" required>
                     </div>
-                    <div class="form-group mt-3">
+                    <div class="form-group">
                         <label for="">Role <small class="text-warning">*</small></label>
                         <select name="role" id="" class="form-control form-control-sm form-control-alternative" required>
                             <option value="">- Pilih Role -</option>
@@ -71,8 +71,22 @@
                         </select>
                     </div>
                     <div class="form-group">
+                        <label for="">Status <small class="text-warning">*</small></label>
+                        <select name="role" id="" class="form-control form-control-sm form-control-alternative" required>
+                            <option value="">- Pilih Status -</option>
+                            <option value="active">Active</option>
+                            <option value="-">Non Active</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
                         <label for="">Password <small class="text-warning">*</small></label>
-                        <input type="password" name="password" id="" class="form-control form-control-alternative form-control-sm" required>
+                        <input type="password" id="pas" name="password" id="" class="form-control form-control-alternative form-control-sm" required>
+                    </div>
+                    <div class="custom-control custom-control-alternative custom-checkbox">
+                        <input class="custom-control-input" id="customCheckLogin" type="checkbox">
+                        <label class="custom-control-label" for="customCheckLogin">
+                            <span class="text-muted">Lihat Password</span>
+                        </label>
                     </div>
                 </div>
                 <div class="modal-footer">
