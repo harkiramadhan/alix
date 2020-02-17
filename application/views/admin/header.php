@@ -125,6 +125,15 @@
                     </li>
                 </ul>
                 <hr class="my-2">
+                <small class="text-muted mb-2 mt-2">User</small>
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link <?php if($this->uri->segment(1) == "backend" && $this->uri->segment(2) == "user"){echo "active";} ?>" href="<?= site_url('backend/user') ?>">
+                            <i class="ni ni-circle-08 text-default"></i> User
+                        </a>
+                    </li>
+                </ul>
+                <hr class="my-2">
                 <ul class="navbar-nav">
                     <li class="nav-item">
                         <a class="nav-link" href="<?= site_url('login/logout')?>">
