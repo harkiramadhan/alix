@@ -40,6 +40,7 @@ class User extends CI_Controller{
                     } 
                     ?>
                 </td>
+                <td><?= $row->status ?></td>
                 <td>
                     <div class="btn-group">
                         <button class="btn btn-sm btn-primary edit_<?= $row->id ?>">Edit</button>
@@ -52,9 +53,9 @@ class User extends CI_Controller{
                     $loader = base_url('assets/home/loader.gif');
                 ?>
                 $(document).ready(function(){
-                    $(".lihat_<?= $row->id ?>").click(function(){
+                    $(".edit_<?= $row->id ?>").click(function(){
                         var iduser = this.id;
-                        var type = 'show';
+                        var type = 'edit';
                         $.ajax({
                             url: '<?= site_url('backend/user/modal') ?>',
                             type: 'post',

@@ -98,4 +98,20 @@
     }); 
 </script>
 
+<?php elseif($uri1 == "backend" && $uri2 == "user" && $uri3 == NULL): ?>
+    <script>
+    $(document).ready(function(){
+        $.ajax({
+            url: '<?= site_url('backend/user/table_list_user') ?>',
+            type: 'POST',
+            beforeSend: function(){
+                $('.list_user').html("<div class='col-xl-12 text-center'><img src='<?= $loader ?>'></div>");
+            },
+            success: function(html){
+                $('.list_user').html(html);
+            }
+        });
+    }); 
+</script>
+
 <?php endif; ?>
