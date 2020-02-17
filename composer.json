@@ -1,0 +1,14 @@
+{
+    "name": "harkiramadhan/ppdb",
+    "authors": [
+        {
+            "name": "harkiramadhan",
+            "email": "harkiramadhan@gmail.com"
+        }
+    ],
+    "require": {
+        "mpdf/mpdf": "^8.0",
+        "mpdf/qrcode": "^1.0",
+        "phpoffice/phpspreadsheet": "^1.10"
+    }
+}
