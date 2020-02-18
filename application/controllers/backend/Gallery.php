@@ -459,20 +459,20 @@ class Gallery extends CI_Controller{
         if($background->num_rows() > 0){
             foreach($background->result() as $row){
                 ?>
-                    <div class="col-md-4 mt-3">
+                    <div class="col-md-3 mt-5">
                         <img id="<?= $row->id ?>" class="rounded" style="height: 100%; width: 100%; cursor:pointer" alt="image preview" src="<?= base_url('./assets/home/img/bg/' . $row->img) ?>">
                         <div class="row mt-2">
                             <div class="col-md-12">
                                 <?php if($row->status == "active"): ?>
                                 <div class="btn-group">
                                     <button class="btn btn-sm btn-success" disabled>Active</button>
-                                    <button class="btn btn-sm btn-danger ml-3 disactive_<?= $row->id ?>" id="<?= $row->id ?>" data-toggle="tooltip" data-placement="bottom" title="Set Non Active">Non Active</button>
+                                    <button class="btn btn-sm btn-danger ml-3 disactive_<?= $row->id ?>" id="<?= $row->id ?>" data-toggle="tooltip" data-placement="bottom" title="Set Non Active"><i class="fas fa-times"></i></button>
                                     <button class="btn btn-sm btn-warning ml-1 delete_<?= $row->id ?>" id="<?= $row->id ?>" data-toggle="tooltip" data-placement="bottom" title="Hapus"><i class="fas fa-trash"></i></button>
                                 </div>
                                 <?php else: ?>
                                 <div class="btn-group">
                                     <button class="btn btn-sm btn-warning" disabled>Non Active</button>
-                                    <button class="btn btn-sm btn-success ml-3 active_<?= $row->id ?>" id="<?= $row->id ?>" data-toggle="tooltip" data-placement="bottom" title="Set Active">Active</button>
+                                    <button class="btn btn-sm btn-success ml-3 active_<?= $row->id ?>" id="<?= $row->id ?>" data-toggle="tooltip" data-placement="bottom" title="Set Active"><i class="fas fa-check"></i></button>
                                     <button class="btn btn-sm btn-warning ml-1 delete_<?= $row->id ?>" id="<?= $row->id ?>" data-toggle="tooltip" data-placement="bottom" title="Hapus"><i class="fas fa-trash"></i></button>
                                 </div>
                                 <?php endif; ?>
@@ -529,21 +529,22 @@ class Gallery extends CI_Controller{
         $slider = $this->M_Gallery->get_slider();
         if($slider->num_rows() > 0){
             foreach($slider->result() as $row){
+                $idgambar = $row->id;
                 ?>
-                    <div class="col-md-4 mt-3">
+                    <div class="col-md-3 mt-5">
                         <img id="<?= $row->id ?>" class="rounded" style="height: 100%; width: 100%; cursor:pointer" alt="image preview" src="<?= base_url('./assets/home/img/slide/' . $row->img) ?>">
                         <div class="row mt-2">
                             <div class="col-md-12">
                                 <?php if($row->status == "active"): ?>
                                 <div class="btn-group">
                                     <button class="btn btn-sm btn-success" disabled>Active</button>
-                                    <button class="btn btn-sm btn-danger ml-3 disactive_<?= $row->id ?>" id="<?= $row->id ?>" data-toggle="tooltip" data-placement="bottom" title="Set Non Active">Non Active</button>
+                                    <button class="btn btn-sm btn-danger ml-3 disactive_<?= $row->id ?>" id="<?= $row->id ?>" data-toggle="tooltip" data-placement="bottom" title="Set Non Active"><i class="fas fa-times"></i></button>
                                     <button class="btn btn-sm btn-warning ml-1 delete_<?= $row->id ?>" id="<?= $row->id ?>" data-toggle="tooltip" data-placement="bottom" title="Hapus"><i class="fas fa-trash"></i></button>
                                 </div>
                                 <?php else: ?>
                                 <div class="btn-group">
                                     <button class="btn btn-sm btn-warning" disabled>Non Active</button>
-                                    <button class="btn btn-sm btn-success ml-3 active_<?= $row->id ?>" id="<?= $row->id ?>" data-toggle="tooltip" data-placement="bottom" title="Set Active">Active</button>
+                                    <button class="btn btn-sm btn-success ml-3 active_<?= $row->id ?>" id="<?= $row->id ?>" data-toggle="tooltip" data-placement="bottom" title="Set Active"><i class="fas fa-check"></i></button>
                                     <button class="btn btn-sm btn-warning ml-1 delete_<?= $row->id ?>" id="<?= $row->id ?>" data-toggle="tooltip" data-placement="bottom" title="Hapus"><i class="fas fa-trash"></i></button>
                                 </div>
                                 <?php endif; ?>
