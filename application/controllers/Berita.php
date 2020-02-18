@@ -24,9 +24,7 @@ class Berita extends CI_Controller{
                     <div class="col-md-4">
                         <div class="card card-plain card-blog">
                             <div class="card-header card-header-image">
-                                <a href="#pablo">
-                                    <img class="img img-raised" src="<?= base_url('/assets/home/img/content/'.$row->img) ?>">
-                                </a>
+                                <img class="img img-raised" src="<?= base_url('/assets/home/img/content/'.$row->img) ?>">
                                 <div class="colored-shadow" style="background-image: url('<?= base_url('/assets/home/img/content/'.$row->img) ?>'); opacity: 1;"></div>
                             </div>
                             <div class="card-body">

@@ -54,4 +54,19 @@
     });
 </script>
 
+<?php elseif($uri1 == "gallery" && $uri2 == NULL): ?>
+<script>
+    $(document).ready(function(){
+        $.ajax({
+            url: '<?= site_url('gallery/list_gallery') ?>',
+            beforeSend: function(){
+                $('.list_gallery').html("<div class='col-xl-12 text-center'><img src='<?= $loader ?>'></div>");
+            },
+            success: function(html){
+                $('.list_gallery').html(html);
+            }
+        });
+    });
+</script>
+
 <?php endif; ?>
