@@ -185,7 +185,43 @@ class Gallery extends CI_Controller{
                 }
             }
         }elseif($jenis == "tambah_gambar"){
-            
+            $gm = $this->input->post('gm', TRUE);
+            if($gm == "bg"){
+                $path = "./assets/home/img/bg/";
+            }elseif($gm == "slider"){
+                $path = "./assets/home/img/slide/";
+            }
+            $config['upload_path']      = $path;  
+            $config['allowed_types']    = 'jpg|jpeg|png|gif'; 
+            $config ['encrypt_name']    = TRUE;
+            $this->load->library('upload', $config);  
+            if($this->upload->do_upload('img')){   
+                $img = $this->upload->data();  
+                $config['image_library']    = 'gd2';  
+                $config['source_image']     = $path.$img["file_name"];  
+                $config['create_thumb']     = FALSE;  
+                $config['maintain_ratio']   = TRUE;  
+                $config['quality']          = '80%';  
+                $config['width']            = 1000;  
+                $config['new_image']        = $path.$img["file_name"];  
+                $this->load->library('image_lib', $config);  
+                $this->image_lib->resize(); 
+
+                $data = [
+                    'jenis' => $gm,
+                    'status' => $this->input->post('status'),
+                    'img' => $img["file_name"]
+                ];
+
+                $this->db->insert('gambar', $data);
+                if($this->db->affected_rows() > 0){
+                    $this->session->set_flashdata('sukses', "Gambar Berhasil Di Tambahkan");
+                    redirect($_SERVER['HTTP_REFERER']);
+                }
+            }else{
+                $this->session->set_flashdata('error', "Gambar Gagal Di Tambahkan");
+                redirect($_SERVER['HTTP_REFERER']);
+            }
         }
     }
 
