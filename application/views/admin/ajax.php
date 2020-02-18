@@ -105,9 +105,10 @@
             url: '<?= site_url('backend/gallery/list_background') ?>',
             type: 'POST',
             beforeSend: function(){
-                $('.list_background').html("<div class='col-xl-12 text-center'><img src='<?= $loader ?>'></div>");
+                $('.an_background').html("<div class='col-xl-12 text-center'><img src='<?= $loader ?>'></div>");
             },
             success: function(html){
+                $('.an_background').remove();
                 $('.list_background').html(html);
             }
         });
@@ -115,9 +116,10 @@
             url: '<?= site_url('backend/gallery/list_slider') ?>',
             type: 'POST',
             beforeSend: function(){
-                $('.list_slider').html("<div class='col-xl-12 text-center'><img src='<?= $loader ?>'></div>");
+                $('.an_slider').html("<div class='col-xl-12 text-center'><img src='<?= $loader ?>'></div>");
             },
             success: function(html){
+                $('.an_slider').remove();
                 $('.list_slider').html(html);
             }
         });

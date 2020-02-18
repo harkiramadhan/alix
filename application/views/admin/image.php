@@ -7,7 +7,7 @@
 </div>
 
 <!-- Page content -->
-<div class="container-fluid mt--6">
+<div class="container-fluid mt--7">
     <div class="row">
         <div class="col-xl-12 mt-5">
             <div class="card bg-secondary shadow">
@@ -22,11 +22,12 @@
                     </div>
                 </div>
             </div>   
+            <div class="an_background"></div>
             <div class="row list_background">
 
             </div>
         </div>
-        <div class="col-xl-12 mt-5">
+        <div class="col-xl-12 mt-5 mb-5">
             <div class="card bg-secondary shadow">
                 <div class="card-header bg-white border-0">
                     <div class="row align-items-center">
@@ -39,6 +40,7 @@
                     </div>
                 </div>
             </div>   
+            <div class="an_slider"></div>
             <div class="row list_slider">
                 
             </div>
@@ -62,7 +64,7 @@
                         <div class="col-md-12">
                             <div class="form-group">
                                 <label for="">Status</label>
-                                <select name="status" id="" class="form-control form-control-sm form-control-alternative">
+                                <select name="status" class="form-control form-control-sm form-control-alternative">
                                     <option value="">- Pilih Status -</option>
                                     <option value="active">Active</option>
                                     <option value="-">Non Active</option>
@@ -103,7 +105,7 @@
                         <div class="col-md-12">
                             <div class="form-group">
                                 <label for="">Status</label>
-                                <select name="status" id="" class="form-control form-control-sm form-control-alternative">
+                                <select name="status" class="form-control form-control-sm form-control-alternative">
                                     <option value="">- Pilih Status -</option>
                                     <option value="active">Active</option>
                                     <option value="-">Non Active</option>
