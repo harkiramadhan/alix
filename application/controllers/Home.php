@@ -24,7 +24,7 @@ class Home extends CI_Controller{
 
     // AJAX
     function get_berita(){
-        $getBerita = $this->M_Berita->get_AllBerita();
+        $getBerita = $this->M_Berita->get_SixBerita();
         ?>
         <?php if($getBerita->num_rows() > 0): ?>
             <?php 
