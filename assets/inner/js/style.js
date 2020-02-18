@@ -14,7 +14,7 @@ $("#shortSiswa").change(function() {
 
 setTimeout(function(){ 
     $(".alert").fadeOut("slow"); 
-}, 1000 ); 
+}, 4000 ); 
 
 $(document).ready(function() {
     $("#myInput").on("keyup", function() {
