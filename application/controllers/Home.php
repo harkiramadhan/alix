@@ -37,7 +37,7 @@ class Home extends CI_Controller{
                     <a href="#pablo">
                         <img class="img img-raised" src="<?= base_url('/assets/home/img/content/'.$row->img) ?>">
                     </a>
-                    <div class="colored-shadow" style="background-image: url(&quot;<?= base_url('/assets/home/img/content/'.$row->img) ?>&quot;); opacity: 1;"></div>
+                    <div class="colored-shadow" style="background-image: url('<?= base_url('/assets/home/img/content/'.$row->img) ?>';); opacity: 1;"></div>
                     </div>
                     <div class="card-body">
                         <h6 class="card-category text-info"></h6>

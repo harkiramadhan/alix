@@ -39,4 +39,19 @@
     });
 </script>
 
+<?php elseif($uri1 == "berita" && $uri2 == NULL): ?>
+<script>
+    $(document).ready(function(){
+        $.ajax({
+            url: '<?= site_url('berita/list_berita') ?>',
+            beforeSend: function(){
+                $('.list_berita').html("<div class='col-xl-12 text-center'><img src='<?= $loader ?>'></div>");
+            },
+            success: function(html){
+                $('.list_berita').html(html);
+            }
+        });
+    });
+</script>
+
 <?php endif; ?>

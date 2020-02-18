@@ -34,7 +34,7 @@
  $uri = $this->uri->segment(1);
  if($uri == "home" || $uri == ""){
      $p = "index-page";
- }elseif($uri == "profile" || $uri == "gallery"){
+ }elseif($uri == "profile" || $uri == "gallery" || $uri == "berita"){
      $p = "profile-page";
  } ?>
  <body class="<?= $p ?> sidebar-collapse">

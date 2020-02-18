@@ -54,9 +54,3 @@ $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 $route['admin'] = 'backend/login';
 
-// Home
-$route['berita'] = 'client/berita';
-$route['gallery'] = 'client/gallery';
-$route['profile'] = 'client/profile';
-$route['prestasi'] = 'client/prestasi';
-$route['kontak'] = 'client/kontak';
