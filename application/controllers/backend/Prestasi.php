@@ -164,7 +164,14 @@ class Prestasi extends CI_Controller{
             ?>
                 <tr>
                     <td><?= $no++ ?></td>
-                    <td><?= $row->kategori ?></td>
+                    <td><?php
+                    $kategori = $row->kategori; 
+                    if($kategori == "Akademik"){
+                        echo "<span class='badge badge-success'>Akademik</span>";
+                    }else{
+                        echo "<span class='badge badge-primary'>Non Akademik</span>";
+                    }
+                    ?></td>
                     <td><?= $row->tahun ?></td>
                     <td><?= $row->prestasi ?></td>
                     <td>
