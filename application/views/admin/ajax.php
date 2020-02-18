@@ -142,4 +142,20 @@
     }); 
 </script>
 
+<?php elseif($uri1 == "backend" && $uri2 == "prestasi" && $uri3 == NULL): ?>
+<script>
+    $(document).ready(function(){
+        $.ajax({
+            url: '<?= site_url('backend/prestasi/table_list_prestasi') ?>',
+            type: 'POST',
+            beforeSend: function(){
+                $('.list_prestasi').html("<div class='col-xl-12 text-center'><img src='<?= $loader ?>'></div>");
+            },
+            success: function(html){
+                $('.list_prestasi').html(html);
+            }
+        });
+    }); 
+</script>
+
 <?php endif; ?>
