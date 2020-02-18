@@ -462,62 +462,67 @@ class Gallery extends CI_Controller{
                     <div class="col-md-3 mt-5">
                         <img id="<?= $row->id ?>" class="rounded" style="height: 100%; width: 100%; cursor:pointer" alt="image preview" src="<?= base_url('./assets/home/img/bg/' . $row->img) ?>">
                         <div class="row mt-2">
-                            <div class="col-md-12">
+                            <div class="col-6 text-left">
+                                <?php if($row->status == "active"): ?>
+                                    <button class="btn btn-sm btn-success btn-block" disabled>Active</button>
+                                <?php else: ?>
+                                    <button class="btn btn-sm btn-warning btn-block" disabled>Non Active</button>
+                                <?php endif; ?>
+                            </div>
+                            <div class="col-6 text-right">
                                 <?php if($row->status == "active"): ?>
                                 <div class="btn-group">
-                                    <button class="btn btn-sm btn-success" disabled>Active</button>
                                     <button class="btn btn-sm btn-danger ml-3 disactive_<?= $row->id ?>" id="<?= $row->id ?>" data-toggle="tooltip" data-placement="bottom" title="Set Non Active"><i class="fas fa-times"></i></button>
                                     <button class="btn btn-sm btn-warning ml-1 delete_<?= $row->id ?>" id="<?= $row->id ?>" data-toggle="tooltip" data-placement="bottom" title="Hapus"><i class="fas fa-trash"></i></button>
                                 </div>
                                 <?php else: ?>
                                 <div class="btn-group">
-                                    <button class="btn btn-sm btn-warning" disabled>Non Active</button>
                                     <button class="btn btn-sm btn-success ml-3 active_<?= $row->id ?>" id="<?= $row->id ?>" data-toggle="tooltip" data-placement="bottom" title="Set Active"><i class="fas fa-check"></i></button>
                                     <button class="btn btn-sm btn-warning ml-1 delete_<?= $row->id ?>" id="<?= $row->id ?>" data-toggle="tooltip" data-placement="bottom" title="Hapus"><i class="fas fa-trash"></i></button>
                                 </div>
                                 <?php endif; ?>
-                                <script>
-                                    $('.disactive_<?= $row->id ?>').click(function(){
-                                        var idgambar = this.id;
-                                        var jenis = "disactive";
-                                        var gambar = "Background";
-                                        $.ajax({
-                                            url: '<?= site_url('backend/gallery/update') ?>',
-                                            type: 'post',
-                                            data: {idgambar : idgambar, jenis : jenis, gambar : gambar},
-                                            success: function(){
-                                                location.reload();
-                                            }
-                                        });
-                                    });
-                                    $('.active_<?= $row->id ?>').click(function(){
-                                        var idgambar = this.id;
-                                        var jenis = "active";
-                                        var gambar = "Background";
-                                        $.ajax({
-                                            url: '<?= site_url('backend/gallery/update') ?>',
-                                            type: 'post',
-                                            data: {idgambar : idgambar, jenis : jenis, gambar : gambar},
-                                            success: function(){
-                                                location.reload();
-                                            }
-                                        });
-                                    });
-                                    $('.delete_<?= $row->id ?>').click(function(){
-                                        var idgambar = this.id;
-                                        var jenis = "delete";
-                                        var gambar = "Background";
-                                        $.ajax({
-                                            url: '<?= site_url('backend/gallery/update') ?>',
-                                            type: 'post',
-                                            data: {idgambar : idgambar, jenis : jenis, gambar : gambar},
-                                            success: function(){
-                                                location.reload();
-                                            }
-                                        });
-                                    });
-                                </script>
                             </div>
+                            <script>
+                                $('.disactive_<?= $row->id ?>').click(function(){
+                                    var idgambar = this.id;
+                                    var jenis = "disactive";
+                                    var gambar = "Background";
+                                    $.ajax({
+                                        url: '<?= site_url('backend/gallery/update') ?>',
+                                        type: 'post',
+                                        data: {idgambar : idgambar, jenis : jenis, gambar : gambar},
+                                        success: function(){
+                                            location.reload();
+                                        }
+                                    });
+                                });
+                                $('.active_<?= $row->id ?>').click(function(){
+                                    var idgambar = this.id;
+                                    var jenis = "active";
+                                    var gambar = "Background";
+                                    $.ajax({
+                                        url: '<?= site_url('backend/gallery/update') ?>',
+                                        type: 'post',
+                                        data: {idgambar : idgambar, jenis : jenis, gambar : gambar},
+                                        success: function(){
+                                            location.reload();
+                                        }
+                                    });
+                                });
+                                $('.delete_<?= $row->id ?>').click(function(){
+                                    var idgambar = this.id;
+                                    var jenis = "delete";
+                                    var gambar = "Background";
+                                    $.ajax({
+                                        url: '<?= site_url('backend/gallery/update') ?>',
+                                        type: 'post',
+                                        data: {idgambar : idgambar, jenis : jenis, gambar : gambar},
+                                        success: function(){
+                                            location.reload();
+                                        }
+                                    });
+                                });
+                            </script>
                         </div>
                     </div>
                 <?php
@@ -534,62 +539,67 @@ class Gallery extends CI_Controller{
                     <div class="col-md-3 mt-5">
                         <img id="<?= $row->id ?>" class="rounded" style="height: 100%; width: 100%; cursor:pointer" alt="image preview" src="<?= base_url('./assets/home/img/slide/' . $row->img) ?>">
                         <div class="row mt-2">
-                            <div class="col-md-12">
+                            <div class="col-6 text-left">
+                                <?php if($row->status == "active"): ?>
+                                    <button class="btn btn-sm btn-block btn-success" disabled>Active</button>
+                                <?php else: ?>
+                                    <button class="btn btn-sm btn-block btn-warning" disabled>Non Active</button>
+                                <?php endif; ?>
+                            </div>
+                            <div class="col-6 text-right">
                                 <?php if($row->status == "active"): ?>
                                 <div class="btn-group">
-                                    <button class="btn btn-sm btn-success" disabled>Active</button>
                                     <button class="btn btn-sm btn-danger ml-3 disactive_<?= $row->id ?>" id="<?= $row->id ?>" data-toggle="tooltip" data-placement="bottom" title="Set Non Active"><i class="fas fa-times"></i></button>
                                     <button class="btn btn-sm btn-warning ml-1 delete_<?= $row->id ?>" id="<?= $row->id ?>" data-toggle="tooltip" data-placement="bottom" title="Hapus"><i class="fas fa-trash"></i></button>
                                 </div>
                                 <?php else: ?>
                                 <div class="btn-group">
-                                    <button class="btn btn-sm btn-warning" disabled>Non Active</button>
                                     <button class="btn btn-sm btn-success ml-3 active_<?= $row->id ?>" id="<?= $row->id ?>" data-toggle="tooltip" data-placement="bottom" title="Set Active"><i class="fas fa-check"></i></button>
                                     <button class="btn btn-sm btn-warning ml-1 delete_<?= $row->id ?>" id="<?= $row->id ?>" data-toggle="tooltip" data-placement="bottom" title="Hapus"><i class="fas fa-trash"></i></button>
                                 </div>
                                 <?php endif; ?>
-                                <script>
-                                    $('.disactive_<?= $row->id ?>').click(function(){
-                                        var idgambar = this.id;
-                                        var jenis = "disactive";
-                                        var gambar = "Slider";
-                                        $.ajax({
-                                            url: '<?= site_url('backend/gallery/update') ?>',
-                                            type: 'post',
-                                            data: {idgambar : idgambar, jenis : jenis, gambar : gambar},
-                                            success: function(){
-                                                location.reload();
-                                            }
-                                        });
-                                    });
-                                    $('.active_<?= $row->id ?>').click(function(){
-                                        var idgambar = this.id;
-                                        var jenis = "active";
-                                        var gambar = "Slider";
-                                        $.ajax({
-                                            url: '<?= site_url('backend/gallery/update') ?>',
-                                            type: 'post',
-                                            data: {idgambar : idgambar, jenis : jenis, gambar : gambar},
-                                            success: function(){
-                                                location.reload();
-                                            }
-                                        });
-                                    });
-                                    $('.delete_<?= $row->id ?>').click(function(){
-                                        var idgambar = this.id;
-                                        var jenis = "delete";
-                                        var gambar = "Slider";
-                                        $.ajax({
-                                            url: '<?= site_url('backend/gallery/update') ?>',
-                                            type: 'post',
-                                            data: {idgambar : idgambar, jenis : jenis, gambar : gambar},
-                                            success: function(){
-                                                location.reload();
-                                            }
-                                        });
-                                    });
-                                </script>
                             </div>
+                            <script>
+                                $('.disactive_<?= $row->id ?>').click(function(){
+                                    var idgambar = this.id;
+                                    var jenis = "disactive";
+                                    var gambar = "Slider";
+                                    $.ajax({
+                                        url: '<?= site_url('backend/gallery/update') ?>',
+                                        type: 'post',
+                                        data: {idgambar : idgambar, jenis : jenis, gambar : gambar},
+                                        success: function(){
+                                            location.reload();
+                                        }
+                                    });
+                                });
+                                $('.active_<?= $row->id ?>').click(function(){
+                                    var idgambar = this.id;
+                                    var jenis = "active";
+                                    var gambar = "Slider";
+                                    $.ajax({
+                                        url: '<?= site_url('backend/gallery/update') ?>',
+                                        type: 'post',
+                                        data: {idgambar : idgambar, jenis : jenis, gambar : gambar},
+                                        success: function(){
+                                            location.reload();
+                                        }
+                                    });
+                                });
+                                $('.delete_<?= $row->id ?>').click(function(){
+                                    var idgambar = this.id;
+                                    var jenis = "delete";
+                                    var gambar = "Slider";
+                                    $.ajax({
+                                        url: '<?= site_url('backend/gallery/update') ?>',
+                                        type: 'post',
+                                        data: {idgambar : idgambar, jenis : jenis, gambar : gambar},
+                                        success: function(){
+                                            location.reload();
+                                        }
+                                    });
+                                });
+                            </script>
                         </div>
                     </div>
                 <?php
