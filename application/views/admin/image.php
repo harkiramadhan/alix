@@ -26,7 +26,7 @@
 
             </div>
         </div>
-        <div class="col-xl-12 mt-3">
+        <div class="col-xl-12 mt-5">
             <div class="card bg-secondary shadow">
                 <div class="card-header bg-white border-0">
                     <div class="row align-items-center">

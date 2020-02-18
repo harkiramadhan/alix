@@ -421,6 +421,11 @@ class Gallery extends CI_Controller{
                                 alert(idbackground);
                             });
                         </script>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <span>Test</span>
+                            </div>
+                        </div>
                     </div>
                 <?php
             }
