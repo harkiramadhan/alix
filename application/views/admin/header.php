@@ -14,7 +14,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Al Hikmah - PPDB Online.">
+    <meta name="description" content="Al Hikmah - Admin Website.">
     <meta name="author" content="Al Hikmah">
     <title><?= $title ?></title>
     <!-- Favicon -->
@@ -72,7 +72,7 @@
                     <div class="row">
                         <div class="col-6 collapse-brand">
                             <a href="<?= site_url(''); ?>">
-                                PPDB Online
+                                Web Admin
                             </a>
                         </div>
                         <div class="col-6 collapse-close">
@@ -112,6 +112,11 @@
                     <li class="nav-item">
                         <a class="nav-link <?php if($this->uri->segment(1) == "backend" && $this->uri->segment(2) == "berita"){echo "active";} ?>" href="<?= site_url('backend/berita') ?>">
                             <i class="ni ni-single-copy-04 text-default"></i> Berita
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link <?php if($this->uri->segment(1) == "backend" && $this->uri->segment(2) == "prestasi"){echo "active";} ?>" href="<?= site_url('backend/prestasi') ?>">
+                            <i class="ni ni-trophy text-default"></i> Prestasi
                         </a>
                     </li>
                 </ul>

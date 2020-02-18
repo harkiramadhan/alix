@@ -459,8 +459,8 @@ class Gallery extends CI_Controller{
         if($background->num_rows() > 0){
             foreach($background->result() as $row){
                 ?>
-                    <div class="col-md-3 mt-5">
-                        <img id="<?= $row->id ?>" class="rounded" style="height: 100%; width: 100%; cursor:pointer" alt="image preview" src="<?= base_url('./assets/home/img/bg/' . $row->img) ?>">
+                    <div class="col-xl-3 mt-5">
+                        <img id="<?= $row->id ?>" class="rounded" style="height: 100%; width: 100%;" alt="image preview" src="<?= base_url('./assets/home/img/bg/' . $row->img) ?>">
                         <div class="row mt-2">
                             <div class="col-6 text-left">
                                 <?php if($row->status == "active"): ?>
@@ -536,8 +536,8 @@ class Gallery extends CI_Controller{
             foreach($slider->result() as $row){
                 $idgambar = $row->id;
                 ?>
-                    <div class="col-md-3 mt-5">
-                        <img id="<?= $row->id ?>" class="rounded" style="height: 100%; width: 100%; cursor:pointer" alt="image preview" src="<?= base_url('./assets/home/img/slide/' . $row->img) ?>">
+                    <div class="col-xl-3 mt-5">
+                        <img id="<?= $row->id ?>" class="rounded" style="height: 100%; width: 100%" alt="image preview" src="<?= base_url('./assets/home/img/slide/' . $row->img) ?>">
                         <div class="row mt-2">
                             <div class="col-6 text-left">
                                 <?php if($row->status == "active"): ?>
