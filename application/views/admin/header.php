@@ -182,20 +182,6 @@
                 </div>
             </div>
             <?php } ?>
-            <?php
-            $data3 = $this->session->flashdata('gagal');
-            if($data3!=""){?>
-            <div class="sticky-top col-md-12 alert">
-                <div class="alert alert-warning" role="alert">
-                    <span class="alert-inner--icon"><i class="ni ni-notification-70"></i></span>
-                    <span class="alert-inner--text"><strong> &nbsp Error! </strong>Silahkan Lengkapi Document : <?php
-                        foreach($data3 as $g){
-                            echo $g.", ";
-                        }
-                    ?></span>
-                </div>
-            </div>
-            <?php } ?>
             <div class="container-fluid">
                 <!-- User -->
                 <ul class="navbar-nav align-items-center d-none d-md-flex ml-auto">
