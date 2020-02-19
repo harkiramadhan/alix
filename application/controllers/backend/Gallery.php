@@ -59,7 +59,6 @@ class Gallery extends CI_Controller{
                 $config['create_thumb']     = FALSE;  
                 $config['maintain_ratio']   = TRUE;  
                 $config['quality']          = '80%';  
-                $config['width']            = 1000;  
                 $config['new_image']        = './assets/home/img/content/'.$img["file_name"];  
                 $this->load->library('image_lib', $config);  
                 $this->image_lib->resize(); 
@@ -115,7 +114,6 @@ class Gallery extends CI_Controller{
                 $config['create_thumb']     = FALSE;  
                 $config['maintain_ratio']   = TRUE;  
                 $config['quality']          = '80%';  
-                $config['width']            = 1000;  
                 $config['new_image']        = './assets/home/img/content/'.$img["file_name"];  
                 $this->load->library('image_lib', $config);  
                 $this->image_lib->resize(); 
@@ -152,8 +150,7 @@ class Gallery extends CI_Controller{
                 $config['source_image']     = './assets/home/img/content/'.$img["file_name"];  
                 $config['create_thumb']     = FALSE;  
                 $config['maintain_ratio']   = TRUE;  
-                $config['quality']          = '80%';  
-                $config['width']            = 1000;  
+                $config['quality']          = '80%'; 
                 $config['new_image']        = './assets/home/img/content/'.$img["file_name"];  
                 $this->load->library('image_lib', $config);  
                 $this->image_lib->resize(); 
@@ -202,7 +199,6 @@ class Gallery extends CI_Controller{
                 $config['create_thumb']     = FALSE;  
                 $config['maintain_ratio']   = TRUE;  
                 $config['quality']          = '80%';  
-                $config['width']            = 1000;  
                 $config['new_image']        = $path.$img["file_name"];  
                 $this->load->library('image_lib', $config);  
                 $this->image_lib->resize(); 

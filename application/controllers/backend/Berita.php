@@ -61,7 +61,6 @@ class Berita extends CI_Controller{
                 $config['create_thumb']     = FALSE;  
                 $config['maintain_ratio']   = TRUE;  
                 $config['quality']          = '80%';  
-                $config['width']            = 1000;  
                 $config['new_image']        = './assets/home/img/content/'.$img["file_name"];  
                 $this->load->library('image_lib', $config);  
                 $this->image_lib->resize(); 
@@ -106,7 +105,6 @@ class Berita extends CI_Controller{
                 $config['create_thumb']     = FALSE;  
                 $config['maintain_ratio']   = TRUE;  
                 $config['quality']          = '80%';  
-                $config['width']            = 1000;  
                 $config['new_image']        = './assets/home/img/content/'.$img["file_name"];  
                 $this->load->library('image_lib', $config);  
                 $this->image_lib->resize(); 
