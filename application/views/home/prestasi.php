@@ -32,13 +32,18 @@
         </div>
         </div>
         <div class="tab-content tab-space">
-            <div class="tab-pane active text-center" id="sejarah">
-                <div class="description text-center text-capitalize">
-                
+            <div class="tab-pane active" id="all">
+                <div class="text-capitalize list_all">
+                    
                 </div>
             </div>
-            <div class="tab-pane text-center" id="visi">
-                <div class="description text-center text-capitalize">
+            <div class="tab-pane" id="akademik">
+                <div class="text-capitalize list_akademik">
+
+                </div>
+            </div>
+            <div class="tab-pane" id="non">
+                <div class="text-capitalize list_non">
                 
                 </div>
             </div>

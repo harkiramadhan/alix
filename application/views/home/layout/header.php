@@ -61,14 +61,14 @@
                        <i class="material-icons">home</i> Beranda
                    </a>
                </li>
-               <li class="nav-item <?php if($uri == "berita"){echo "active";} ?>">
-                    <a class="nav-link" href="<?= site_url('berita') ?>">
-                        <i class="material-icons">menu_book</i> Berita
-                    </a>
-               </li>
                <li class="nav-item <?php if($uri == "profile"){echo "active";} ?>">
                     <a class="nav-link" href="<?= site_url('profile') ?>">
                         <i class="material-icons">account_balance</i> Profil
+                    </a>
+               </li>
+               <li class="nav-item <?php if($uri == "berita"){echo "active";} ?>">
+                    <a class="nav-link" href="<?= site_url('berita') ?>">
+                        <i class="material-icons">menu_book</i> Berita
                     </a>
                </li>
                <li class="nav-item <?php if($uri == "prestasi"){echo "active";} ?>">

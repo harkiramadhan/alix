@@ -69,4 +69,48 @@
     });
 </script>
 
+<?php elseif($uri1 == "prestasi" && $uri2 == NULL): ?>
+    <script>
+    $(document).ready(function(){
+        var jenis = 'all';
+        $.ajax({
+            url: '<?= site_url('prestasi/list') ?>',
+            type: 'post',
+            data: {jenis : jenis},
+            beforeSend: function(){
+                $('.list_all').html("<div class='col-xl-12 text-center'><img src='<?= $loader ?>'></div>");
+            },
+            success: function(html){
+                $('.list_all').html(html);
+            }
+        });
+
+        var jenis = 'Akademik';
+        $.ajax({
+            url: '<?= site_url('prestasi/list') ?>',
+            type: 'post',
+            data: {jenis : jenis},
+            beforeSend: function(){
+                $('.list_akademik').html("<div class='col-xl-12 text-center'><img src='<?= $loader ?>'></div>");
+            },
+            success: function(html){
+                $('.list_akademik').html(html);
+            }
+        });
+
+        var jenis = 'Non';
+        $.ajax({
+            url: '<?= site_url('prestasi/list') ?>',
+            type: 'post',
+            data: {jenis : jenis},
+            beforeSend: function(){
+                $('.list_non').html("<div class='col-xl-12 text-center'><img src='<?= $loader ?>'></div>");
+            },
+            success: function(html){
+                $('.list_non').html(html);
+            }
+        });
+    });
+</script>
+
 <?php endif; ?>
