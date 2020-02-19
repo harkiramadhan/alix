@@ -20,15 +20,17 @@
             </div>
         </div>
         </div>
-        <div class="description text-justify">
-            <?= $sejarah ?>
-        </div>
         <div class="row">
         <div class="col-md-8 ml-auto mr-auto">
             <div class="profile-tabs">
             <ul class="nav nav-pills nav-pills-icons justify-content-center" role="tablist">
                 <li class="nav-item">
-                    <a class="nav-link active" href="#visi" role="tab" data-toggle="tab">
+                    <a class="nav-link active" href="#sejarah" role="tab" data-toggle="tab">
+                        <i class="material-icons">history</i> Sejarah
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#visi" role="tab" data-toggle="tab">
                         <i class="material-icons">how_to_reg</i> Visi
                     </a>
                 </li>
@@ -57,7 +59,12 @@
         </div>
         </div>
         <div class="tab-content tab-space">
-            <div class="tab-pane active text-center gallery" id="visi">
+            <div class="tab-pane active text-center gallery" id="sejarah">
+                <div class="description text-center text-capitalize">
+                    <?= $sejarah ?>
+                </div>
+            </div>
+            <div class="tab-pane text-center gallery" id="visi">
                 <div class="description text-center text-capitalize">
                     <?= $visi ?>
                 </div>
