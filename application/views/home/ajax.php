@@ -51,6 +51,22 @@
                 $('.list_berita').html(html);
             }
         });
+        $('.label').click(function(){
+            var from = $(this).attr('href');
+            var idlabel = from.replace('#','');
+            var list = '.list_'+idlabel;
+            $.ajax({
+                url: '<?= site_url('berita/list_by_label') ?>',
+                type: 'post',
+                data: {idlabel : idlabel},
+                beforeSend: function(){
+                    $(list).html("<div class='col-xl-12 text-center'><img src='<?= $loader ?>'></div>");
+                },
+                success: function(html){
+                    $(list).html(html);
+                }
+            });
+        });
     });
 </script>
 

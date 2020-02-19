@@ -47,6 +47,18 @@ class M_Berita extends CI_Model{
         return $this->db->get();
     }
 
+    function get_BeritaByLabel($idlabel){
+        $this->db->select('berita.*');
+        $this->db->from('label_berita');
+        $this->db->join('label', "label_berita.id_label = label.id");
+        $this->db->join('berita', "label_berita.id_berita = berita.id");
+        $this->db->where([
+            'berita.status'=> "published",
+            'label_berita.id_label' => $idlabel
+        ]);
+        return $this->db->get();
+    }
+
     function get_byId($idberita){
         $this->db->select('*');
         $this->db->from('berita');
