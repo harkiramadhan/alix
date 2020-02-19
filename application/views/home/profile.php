@@ -21,9 +21,7 @@
         </div>
         </div>
         <div class="description text-justify">
-            <p style="color: black;">
-                <?= $sejarah ?>
-            </p>
+            <?= $sejarah ?>
         </div>
         <div class="row">
         <div class="col-md-8 ml-auto mr-auto">
@@ -59,41 +57,31 @@
         </div>
         </div>
         <div class="tab-content tab-space">
-        <div class="tab-pane active text-center gallery" id="visi">
-            <div class="description text-center text-capitalize">
-                <p style="color: black;">
+            <div class="tab-pane active text-center gallery" id="visi">
+                <div class="description text-center text-capitalize">
                     <?= $visi ?>
-                </p>
+                </div>
             </div>
-        </div>
-        <div class="tab-pane text-center gallery" id="misi">
-            <div class="description text-left text-capitalize">
-                <p style="color: black;">
-                    <?= $misi ?> <br>                   
-                </p>
+            <div class="tab-pane text-center gallery" id="misi">
+                <div class="description text-left text-capitalize">
+                    <?= $misi ?>
+                </div>
             </div>
-        </div>
-        <div class="tab-pane text-center gallery" id="tujuan">
-            <div class="description text-left text-capitalize">
-                <p style="color: black;">
-                    <?= $tujuan ?>                
-                </p>
+            <div class="tab-pane text-center gallery" id="tujuan">
+                <div class="description text-left text-capitalize">
+                    <?= $tujuan ?> 
+                </div>
             </div>
-        </div>
-        <div class="tab-pane text-center gallery" id="motto">
-            <div class="description text-left text-capitalize">
-                <p class="text-center" style="color: black;">
-                    <b><?= $motto ?></b>             
-                </p>
+            <div class="tab-pane text-center gallery" id="motto">
+                <div class="description text-left text-capitalize">
+                    <?= $motto ?>
+                </div>
             </div>
-        </div>
-        <div class="tab-pane text-center gallery" id="kurikulum">
-            <div class="description text-center text-capitalize">
-                <p style="color: black;">
-                    <?= $kurikulum ?>            
-                </p>
+            <div class="tab-pane text-center gallery" id="kurikulum">
+                <div class="description text-center text-capitalize">
+                    <?= $kurikulum ?>  
+                </div>
             </div>
-        </div>
         </div>
     </div>
     </div>
