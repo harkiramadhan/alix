@@ -50,19 +50,16 @@
       <?php endif; ?>
       <div class="container">
         <!-- Berita -->
-        <div class="section mt-0 pt-1">
+        <div class="section mt-0 pt-1 pb-0">
           <h2 class="title text-center mb-2 pb-2">Berita</h2>
           <br>
           <div class="row" id="listBerita">
 
           </div>
-          <div class="col-md-12 text-right">
-              <a href="<?= site_url('berita') ?>"> Selengkapnya </a>
-          </div>
         </div>
 
         <!-- Gallery -->
-        <div class="section mt-0 pt-1">
+        <div class="section mt-0 pt-0">
           <div class="container">
             <div class="row">
               <div class="col-md-12">
