@@ -9,20 +9,20 @@
     <div class="profile-content">
     <div class="container">
         <div class="row">
-        <div class="col-md-6 ml-auto mr-auto">
-            <div class="profile">
-            <div class="avatar">
-                <img src="<?= base_url('/assets/home/img/'.$logo) ?>" alt="Circle Image" class="img-raised rounded-circle img-fluid">
+            <div class="col-md-6 ml-auto mr-auto">
+                <div class="profile">
+                    <div class="avatar">
+                        <img src="<?= base_url('/assets/home/img/'.$logo) ?>" alt="Circle Image" class="img-raised rounded-circle img-fluid">
+                    </div>
+                    <div class="name">
+                        <h3 class="title">SDIT AL-HIKMAH</h3>
+                    </div>
+                </div>
             </div>
-            <div class="name">
-                <h3 class="title">SDIT AL-HIKMAH</h3>
-            </div>
-            </div>
-        </div>
         </div>
         <div class="row">
         <div class="col-md-8 ml-auto mr-auto">
-            <div class="profile-tabs">
+            <div class="profile-tabs mt-2">
             <ul class="nav nav-pills nav-pills-icons justify-content-center" role="tablist">
                 <li class="nav-item">
                     <a class="nav-link active" href="#sejarah" role="tab" data-toggle="tab">
@@ -59,32 +59,34 @@
         </div>
         </div>
         <div class="tab-content tab-space">
-            <div class="tab-pane active text-center gallery" id="sejarah">
+            <div class="tab-pane active text-center" id="sejarah">
                 <div class="description text-center text-capitalize">
                     <?= $sejarah ?>
                 </div>
             </div>
-            <div class="tab-pane text-center gallery" id="visi">
+            <div class="tab-pane text-center" id="visi">
                 <div class="description text-center text-capitalize">
                     <?= $visi ?>
                 </div>
             </div>
-            <div class="tab-pane text-center gallery" id="misi">
+            <div class="tab-pane text-center" id="misi">
                 <div class="description text-left text-capitalize">
                     <?= $misi ?>
                 </div>
             </div>
-            <div class="tab-pane text-center gallery" id="tujuan">
+            <div class="tab-pane text-center" id="tujuan">
                 <div class="description text-left text-capitalize">
                     <?= $tujuan ?> 
                 </div>
             </div>
-            <div class="tab-pane text-center gallery" id="motto">
+            <div class="tab-pane text-center" id="motto">
                 <div class="description text-left text-capitalize">
-                    <?= $motto ?>
+                    <div class="text-center">
+                        <strong><?= $motto ?></strong>
+                    </div>
                 </div>
             </div>
-            <div class="tab-pane text-center gallery" id="kurikulum">
+            <div class="tab-pane text-center" id="kurikulum">
                 <div class="description text-center text-capitalize">
                     <?= $kurikulum ?>  
                 </div>
