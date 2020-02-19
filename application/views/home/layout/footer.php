@@ -1,22 +1,28 @@
-    <footer class="footer" data-background-color="black">
+     <footer class="footer" data-background-color="black">
      <div class="container">
        <nav class="float-left">
          <ul>
+          <?php if($sekolah->instagram != NULL): ?>
            <li>
-             <a href="<?= sosmed("instagram") ?>">
+             <a href="<?= $sekolah->instagram ?>">
                <h4><b><i class="fa fa-instagram"></i></b></h4>
              </a>
            </li>
+          <?php endif; ?>
+          <?php if($sekolah->youtube != NULL): ?>
            <li>
-             <a href="<?= sosmed("youtube") ?>">
+             <a href="<?= $sekolah->youtube ?>">
                <h4><b><i class="fa fa-youtube"></i></b></h4>
              </a>
            </li>
+          <?php endif; ?>
+          <?php if($sekolah->facebook != NULL): ?>
            <li>
-             <a href="<?= sosmed("facebook") ?>">
+             <a href="<?= $sekolah->facebook ?>">
                <h4><b><i class="fa fa-facebook"></i></b></h4>
              </a>
            </li>
+          <?php endif; ?>
          </ul>
        </nav>
        <div class="copyright float-right">

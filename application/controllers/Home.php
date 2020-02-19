@@ -16,6 +16,7 @@ class Home extends CI_Controller{
         $var['nama'] = $this->sekolah()->nama;
         $var['slider'] = $this->M_Sekolah->get_img("slider");
         $var['bg'] = $this->M_Sekolah->get_img("bg");
+        $var['sekolah'] = $this->db->get_Where('sekolah', ['id'=> 1])->row();
         
         $this->load->view('home/layout/header');
         $this->load->view('home/home', $var);

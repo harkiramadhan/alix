@@ -8,6 +8,7 @@ class Gallery extends CI_Controller{
 
     function index(){
         $var['bg'] = $this->M_Sekolah->get_img("bg");
+        $var['sekolah'] = $this->db->get_Where('sekolah', ['id'=> 1])->row();
 
         $this->load->view('home/layout/header');
         $this->load->view('home/gallery', $var);

@@ -20,6 +20,7 @@ class Profile extends CI_Controller{
         $var['kurikulum'] = $this->sekolah()->kurikulum;
         $var['logo'] = $this->sekolah()->logo;
         $var['bg'] = $this->M_Sekolah->get_img("bg");
+        $var['sekolah'] = $this->db->get_Where('sekolah', ['id'=> 1])->row();
 
         $this->load->view('home/layout/header');
         $this->load->view('home/profile', $var);
