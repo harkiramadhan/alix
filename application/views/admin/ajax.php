@@ -21,6 +21,139 @@
     });    
 </script>
 
+<?php elseif($uri1 == "backend" && $uri2 == "profile" && $uri3 == NULL): 
+    $sejarah = $sekolah->sejarah;
+    $visi = $sekolah->visi;
+    $misi = $sekolah->misi;
+    $tujuan = $sekolah->tujuan;
+    $motto = $sekolah->motto;
+    $kurikulum = $sekolah->kurikulum;    
+?>
+<script>
+    // Sejarah 
+    var QuillSejarah = new Quill('#editorSejarah', {
+        modules: {
+        toolbar: [
+            [{ 'font': [] }],
+            [{ header: [1, 2, false] }],
+            ['bold', 'italic', 'underline'],
+            ['link', 'blockquote'],
+            [{ list: 'ordered' }, { list: 'bullet' }],
+            [{ 'align': [] }],
+        ]
+      },
+      placeholder: 'Tuliskan Sejarah . . .',
+      theme: 'snow'
+    });
+    <?php if($sejarah != NULL): ?>
+        QuillSejarah.clipboard.dangerouslyPasteHTML('<?= $sejarah ?>');
+    <?php endif; ?>
+
+    // Visi
+    var QuillVisi = new Quill('#editorVisi', {
+        modules: {
+        toolbar: [
+            [{ 'font': [] }],
+            [{ header: [1, 2, false] }],
+            ['bold', 'italic', 'underline'],
+            ['link', 'blockquote'],
+            [{ list: 'ordered' }, { list: 'bullet' }],
+            [{ 'align': [] }],
+        ]
+      },
+      placeholder: 'Tuliskan Visi . . .',
+      theme: 'snow'
+    });
+    <?php if($visi != NULL): ?>
+        QuillVisi.clipboard.dangerouslyPasteHTML('<?= $visi ?>');
+    <?php endif; ?>
+
+    // Misi
+    var QuillMisi = new Quill('#editorMisi', {
+        modules: {
+        toolbar: [
+            [{ 'font': [] }],
+            [{ header: [1, 2, false] }],
+            ['bold', 'italic', 'underline'],
+            ['link', 'blockquote'],
+            [{ list: 'ordered' }, { list: 'bullet' }],
+            [{ 'align': [] }],
+        ]
+      },
+      placeholder: 'Tuliskan Misi . . .',
+      theme: 'snow'
+    });
+    <?php if($misi != NULL): ?>
+        QuillMisi.clipboard.dangerouslyPasteHTML('<?= $misi ?>');
+    <?php endif; ?>
+
+    // Tujuan
+    var QuillTujuan = new Quill('#editorTujuan', {
+        modules: {
+        toolbar: [
+            [{ 'font': [] }],
+            [{ header: [1, 2, false] }],
+            ['bold', 'italic', 'underline'],
+            ['link', 'blockquote'],
+            [{ list: 'ordered' }, { list: 'bullet' }],
+            [{ 'align': [] }],
+        ]
+      },
+      placeholder: 'Tuliskan Tujuan . . .',
+      theme: 'snow'
+    });
+    <?php if($tujuan != NULL): ?>
+        QuillTujuan.clipboard.dangerouslyPasteHTML('<?= $tujuan ?>');
+    <?php endif; ?>
+
+    // Motto
+    var QuillMotto = new Quill('#editorMotto', {
+        modules: {
+        toolbar: [
+            [{ 'font': [] }],
+            [{ header: [1, 2, false] }],
+            ['bold', 'italic', 'underline'],
+            ['link', 'blockquote'],
+            [{ list: 'ordered' }, { list: 'bullet' }],
+            [{ 'align': [] }],
+        ]
+      },
+      placeholder: 'Tuliskan Motto . . .',
+      theme: 'snow'
+    });
+    <?php if($motto != NULL): ?>
+        QuillMotto.clipboard.dangerouslyPasteHTML('<?= $motto ?>');
+    <?php endif; ?>
+    
+    // Kurikulum
+    var QuillKurikulum = new Quill('#editorKurikulum', {
+        modules: {
+        toolbar: [
+            [{ 'font': [] }],
+            [{ header: [1, 2, false] }],
+            ['bold', 'italic', 'underline'],
+            ['link', 'blockquote'],
+            [{ list: 'ordered' }, { list: 'bullet' }],
+            [{ 'align': [] }],
+        ]
+      },
+      placeholder: 'Tuliskan Kurikulum . . .',
+      theme: 'snow'
+    });
+    <?php if($kurikulum != NULL): ?>
+        QuillKurikulum.clipboard.dangerouslyPasteHTML('<?= $kurikulum ?>');
+    <?php endif; ?>
+
+    $("#simpan").submit(function() {
+        $("#descSejarah").val(QuillSejarah.root.innerHTML);
+        $("#descVisi").val(QuillVisi.root.innerHTML);
+        $("#descMisi").val(QuillMisi.root.innerHTML);
+        $("#descTujuan").val(QuillTujuan.root.innerHTML);
+        $("#descMotto").val(QuillMotto.root.innerHTML);
+        $("#descKurikulum").val(QuillKurikulum.root.innerHTML);
+    });
+</script>
+
 <?php elseif($uri1 == "backend" && $uri2 == "berita" && $uri3 == "tambah"): ?>
 <script>
     var quill = new Quill('#editorBerita', {

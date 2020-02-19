@@ -9,7 +9,7 @@
 <div class="container-fluid mt--7">
     <div class="row">
         <div class="col-xl-12 mb-5 mb-xl-0 mt-5">
-            <form action="<?= site_url('backend/profile/action') ?>" method="POST" enctype="multipart/form-data" accept-charset="utf-8">~
+            <form action="<?= site_url('backend/profile/action') ?>" method="POST" enctype="multipart/form-data" accept-charset="utf-8" id="simpan">~
             <div class="row">
                 <input type="hidden" name="jenis" value="simpan"> 
                 <div class="col-xl-8 order-xl-1 mt-2">
@@ -18,7 +18,7 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="">Jenjang Sekolah</label>
-                                    <select name="jenjang" id="" class="form-control form-control-alternative form-control-sm">
+                                    <select name="jenjang"  class="form-control form-control-alternative form-control-sm">
                                         <option value="">- Pilih Jenjang -</option>
                                         <option value="TK" <?php if($sekolah->jenjang == "TK"){echo "selected";} ?>>TK</option>
                                         <option value="SD" <?php if($sekolah->jenjang == "SD"){echo "selected";} ?>>SD</option>
@@ -30,33 +30,39 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="">Nama Sekolah</label>
-                                    <input type="text" name="nama" id="" class="form-control form-control-alternative form-control-sm" placeholder="Nama Sekolah" value="<?= $sekolah->nama ?>">
+                                    <input type="text" name="nama"  class="form-control form-control-alternative form-control-sm" placeholder="Nama Sekolah" value="<?= $sekolah->nama ?>">
                                 </div>
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="">Sejarah Sekolah</label>
-                            <textarea name="sejarah" id="" cols="30" rows="10" class="form-control form-control-alternative form-control-sm" placeholder="Sejarah Sekolah"><?= $sekolah->sejarah ?></textarea>
+                            <div id="editorSejarah" style="height: auto;"></div>
+                            <textarea name="sejarah" style="display:none" id="descSejarah"></textarea>
                         </div>
                         <div class="form-group">
                             <label for="">Visi Sekolah</label>
-                            <textarea name="visi" id="" cols="30" rows="10" class="form-control form-control-alternative form-control-sm" placeholder="Visi Sekolah"><?= $sekolah->visi ?></textarea>
+                            <div id="editorVisi" style="height: auto;"></div>
+                            <textarea name="visi" style="display:none" id="descVisi"></textarea>
                         </div>
                         <div class="form-group">
                             <label for="">Misi Sekolah</label>
-                            <textarea name="misi" id="" cols="30" rows="10" class="form-control form-control-alternative form-control-sm" placeholder="Misi Sekolah"><?= $sekolah->misi ?></textarea>
+                            <div id="editorMisi" style="height: auto;"></div>
+                            <textarea name="misi" style="display:none" id="descMisi"></textarea>
                         </div>
                         <div class="form-group">
                             <label for="">Tujuan Sekolah</label>
-                            <textarea name="tujuan" id="" cols="30" rows="10" class="form-control form-control-alternative form-control-sm" placeholder="Tujuan Sekolah"><?= $sekolah->tujuan ?></textarea>
+                            <div id="editorTujuan" style="height: auto;"></div>
+                            <textarea name="tujuan" style="display:none" id="descTujuan"></textarea>
                         </div>
                         <div class="form-group">
                             <label for="">Motto Sekolah</label>
-                            <textarea name="motto" id="" cols="30" rows="10" class="form-control form-control-alternative form-control-sm" placeholder="Motto Sekolah"><?= $sekolah->motto ?></textarea>
+                            <div id="editorMotto" style="height: auto;"></div>
+                            <textarea name="motto" style="display:none" id="descMotto"></textarea>
                         </div>
                         <div class="form-group">
                             <label for="">Kurikulum Sekolah</label>
-                            <textarea name="kurikulum" id="" cols="30" rows="10" class="form-control form-control-alternative form-control-sm" placeholder="Kurikulum Sekolah"><?= $sekolah->kurikulum ?></textarea>
+                            <div id="editorKurikulum" style="height: auto;"></div>
+                            <textarea name="kurikulum" style="display:none" id="descKurikulum"></textarea>
                         </div>
                         <hr>
                         <div class="col-md-12 text-right mb-5">
