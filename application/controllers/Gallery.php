@@ -62,14 +62,14 @@ class Gallery extends CI_Controller{
             $total = $getGallery->num_rows() -1 ;
             $range = range(0, $total);
             ?>
-            <div class="modal-content bg-dark">
+            <div class="modal-content bg-dark rounded">
                 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
                     <ol class="carousel-indicators">
                     <?php foreach($range as $r){ ?>
                         <li data-target="#carouselExampleIndicators" data-slide-to="<?= $r ?>" class="<?php if($r==0){echo "active";} ?>"></li>
                     <?php } ?>
                     </ol>
-                    <div class="carousel-inner">
+                    <div class="carousel-inner rounded">
                     <?php 
                     $no =1;
                     foreach($getGallery->result() as $row){ ?>
@@ -89,7 +89,12 @@ class Gallery extends CI_Controller{
                         <span class="sr-only">Next</span>
                     </a>
                 </div>
-                <div class="row DetailGallery m-3">
+                <div class="row">
+                    <div class="col-xl-12 text-center mb-0 pb-0">
+                        <h5 class="text-white mb-0">Jumlah : <b><?= $getGallery->num_rows() ?> Foto</b></h5>
+                    </div>
+                </div>
+                <div class="row DetailGallery m-3 justify-content-center">
 
                 </div>
             </div>
