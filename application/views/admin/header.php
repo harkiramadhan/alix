@@ -98,13 +98,8 @@
                             <i class="ni ni-single-02 text-default"></i> Profile
                         </a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link <?php if($this->uri->segment(1) == "backend" && $this->uri->segment(2) == "contact"){echo "active";} ?>" href="<?= site_url('backend/contact') ?>">
-                            <i class="ni ni-badge text-default"></i> Contact
-                        </a>
-                    </li>
                 </ul>
-                <hr class="my-4">
+                <hr class="my-2">
                 <small class="text-muted mb-2 mt-2">Berita</small>
                 <ul class="navbar-nav">
                     <li class="nav-item">
