@@ -44,7 +44,7 @@ class Berita extends CI_Controller{
                                     <a href="#pablo"><?= $row->judul ?></a>
                                 </h4>
                                 <p class="card-description">
-                                    <?= substr($row->konten, 0, 100) ?> . . .<a href="#pablo"> Read More </a>
+                                    <?= substr($row->konten, 0, 100) ?>
                                 </p>
                             </div>
                         </div>
@@ -81,7 +81,7 @@ class Berita extends CI_Controller{
                                     <a href="#pablo"><?= $row->judul ?></a>
                                 </h4>
                                 <p class="card-description">
-                                    <?= substr($row->konten, 0, 100) ?> . . .<a href="#pablo"> Read More </a>
+                                    <?= substr($row->konten, 0, 100) ?>
                                 </p>
                             </div>
                         </div>

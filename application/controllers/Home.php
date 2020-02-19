@@ -52,7 +52,7 @@ class Home extends CI_Controller{
                         <?php endif; ?>
                         </h4>
                         <p class="card-description">
-                        <?= substr($row->konten, 0, 100) ?> . . .<a href="#pablo"> Read More </a>
+                        <?= substr($row->konten, 0, 100) ?>
                         </p>
                     </div>
                 </div>
@@ -88,7 +88,7 @@ class Home extends CI_Controller{
                         <?php endif; ?>
                         </h4>
                         <p class="card-description">
-                            <?= substr($row->konten, 0, 50) ?> . . .<a href="#pablo"> Read More </a>
+                            <?= substr($row->konten, 0, 50) ?>
                         </p>
                     </div>
                 </div>
