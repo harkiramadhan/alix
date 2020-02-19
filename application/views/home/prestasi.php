@@ -11,7 +11,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-6 ml-auto mr-auto text-center">
-                <h3 class="title">Prestasi</h3>
+                <h3 class="title">Prestasi <?= $sekolah->nama ?></h3>
             </div>
         </div>
         <div class="row">
