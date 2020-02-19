@@ -10,7 +10,7 @@
     <div class="profile-content">
     <div class="container">
         <div class="row">
-        <div class="col-md-8 ml-auto mr-auto">
+        <div class="col-md-12">
             <div class="profile-tabs mt-5">
             <ul class="nav nav-pills nav-pills-icons justify-content-center" role="tablist">
                 <li class="nav-item">
@@ -34,7 +34,7 @@
             <?php foreach($label as $lb){ ?>
             <div class="tab-pane" id="<?= $lb->id ?>">
                 <div class="row list_<?= $lb->id ?>">
-                    <?= $lb->label ?>
+                
                 </div>
             </div>
             <?php } ?>

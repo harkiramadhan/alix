@@ -88,6 +88,12 @@ class Berita extends CI_Controller{
                     </div>
                 <?php
             }
+        }else{
+           ?>
+            <div class="col-md-12 text-center">
+                <h5>Tidak Ada Berita Yang Berkaitan</h5>
+            </div>
+           <?php
         }
     }
 }
