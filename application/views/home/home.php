@@ -57,7 +57,7 @@
 
           </div>
           <div class="col-md-12 text-right">
-              <a href="#pablo"> Selengkapnya </a>
+              <a href="<?= site_url('berita') ?>"> Selengkapnya </a>
           </div>
         </div>
 
