@@ -15,7 +15,7 @@
                         <img src="<?= base_url('/assets/home/img/'.$logo) ?>" alt="Circle Image" class="img-raised rounded-circle img-fluid">
                     </div>
                     <div class="name">
-                        <h3 class="title">SDIT AL-HIKMAH</h3>
+                        <h3 class="title"><?= $sekolah->nama ?></h3>
                     </div>
                 </div>
             </div>
