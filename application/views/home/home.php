@@ -63,7 +63,7 @@
           <div class="container">
             <div class="row">
               <div class="col-md-12">
-                <h2 class="title text-center mb-2 pb-2">Gallery</h2>
+                <h2 class="title text-center mb-2 pb-2 mt-0">Gallery</h2>
                 <br>
                 <div class="row" id="listGallery">
                   
