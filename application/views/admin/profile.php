@@ -33,6 +33,42 @@
                                     <input type="text" name="nama"  class="form-control form-control-alternative form-control-sm" placeholder="Nama Sekolah" value="<?= $sekolah->nama ?>">
                                 </div>
                             </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="">Instagram</label>
+                                    <input type="text" name="instagram" class="form-control form-control-sm form-control-alternative" placeholder="Instagram" value="<?= $sekolah->instagram ?>">
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="">Facebook</label>
+                                    <input type="text" name="facebook" class="form-control form-control-sm form-control-alternative" placeholder="Facebook" value="<?= $sekolah->facebook ?>">
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="">Youtube</label>
+                                    <input type="text" name="youtube" class="form-control form-control-sm form-control-alternative" placeholder="Youtube" value="<?= $sekolah->youtube ?>">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="">Telepon</label>
+                                    <input type="text" name="telp" class="form-control form-control-sm form-control-alternative" placeholder="Telepon" value="<?= $sekolah->telp ?>">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="">Email</label>
+                                    <input type="email" name="email" class="form-control form-control-sm form-control-alternative" placeholder="Email" value="<?= $sekolah->email ?>">
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="">Alamat Sekolah</label>
+                                    <textarea name="alamat" cols="30" rows="4" class="form-control form-control-alternative form-control-sm"><?= $sekolah->alamat ?></textarea>
+                                </div>
+                            </div>
                         </div>
                         <div class="form-group">
                             <label for="">Sejarah Sekolah</label>
