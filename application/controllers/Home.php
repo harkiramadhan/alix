@@ -104,25 +104,40 @@ class Home extends CI_Controller{
     }
 
     function get_gallery(){
-        $getGallery = $this->M_Gallery->get_threeGallery();
+        $getGallery = $this->M_Gallery->get_FourGallery();
+        $loader = base_url('assets/home/loader.gif');
+        if($getGallery->num_rows() > 0){
+        foreach($getGallery->result() as $row){
         ?>
-            <?php if($getGallery->num_rows() > 0): ?>
-            <?php foreach($getGallery->result() as $row){ ?>
-            <div class="col-md-4">
-                <div class="card card-blog">
+            <div class="col-md-3">
+                <div class="card card-plain card-blog gallery_<?= $row->id ?>" id="<?= $row->id ?>" style="cursor: pointer">
                     <div class="card-header card-header-image">
-                        <a href="#pablo">
-                        <img class="img img-raised" src="<?= base_url('./assets/home/img/content/'.$row->img) ?>">
-                        </a>
-                    <div class="colored-shadow" style="background-image: url(&quot;<?= base_url('upload/gallery/'.$row->img) ?>&quot;); opacity: 1;"></div>
+                        <img class="img img-raised" src="<?= base_url('/assets/home/img/content/'.$row->img) ?>">
+                        <div class="colored-shadow" style="background-image: url('<?= base_url('/assets/home/img/content/'.$row->img) ?>'); opacity: 1;"></div>
                     </div>
                     <div class="card-body">
-                        <h6 class="category text-info"><?= $row->judul ?></h6>
+                        <h4 class="card-title"><?= $row->judul ?></h4>
                     </div>
                 </div>
             </div>
-            <?php } ?>
-            <?php endif; ?>
+            <script>
+                $('.gallery_<?= $row->id ?>').click(function(){
+                    var idgallery = this.id;
+                    $.ajax({
+                        url: '<?= site_url('gallery/modal') ?>',
+                        type: 'post',
+                        data: {idgallery : idgallery},
+                        beforeSend: function(){
+                            $('#modalLihat').modal('show');
+                            $('.isi').html("<div class='col-xl-12 text-center'><img src='<?= $loader ?>'></div>");
+                        },
+                        success: function(html){
+                            $('.isi').html(html);
+                        }
+                    });
+                });
+            </script>
         <?php
+        }}
     }
 }
