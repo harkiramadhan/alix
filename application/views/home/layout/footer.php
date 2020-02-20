@@ -27,9 +27,7 @@
        </nav>
        <div class="copyright float-right">
          &copy;
-         <script>
-           document.write(new Date().getFullYear())
-         </script>,&nbsp; <strong><b>AL - HIKMAH</b></strong>
+        <?= date('Y') ?>,&nbsp; <strong><b>AL - HIKMAH</b></strong>
        </div>
      </div>
    </footer>
