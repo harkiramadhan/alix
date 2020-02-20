@@ -9,7 +9,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-8">
-                            <h2 class="title mt-2">Hubungi Kami</h2>
+                            <h2 class="title mt-5">Hubungi Kami</h2>
                             <form action="" method="post">
                             <div class="form-group">
                                 <label for="">Nama <small class="text-warning">*</small></label>
@@ -33,7 +33,7 @@
                             </form>
                         </div>
                         <div class="col-md-4 text-left">
-                            <div class="info info-horizontal pb-0 pt-1">
+                            <div class="info info-horizontal pb-0">
                                 <div class="icon icon-primary mt-3">
                                     <i class="material-icons">pin_drop</i>
                                 </div>
