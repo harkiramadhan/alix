@@ -51,6 +51,7 @@ class Home extends CI_Controller{
                             <?php } ?>
                         <?php endif; ?>
                         </h4>
+                        <small><?= date_indo(date('Y-m-d', strtotime($row->timestamp))) ?></small>
                         <p class="card-description">
                         <?= substr($row->konten, 0, 100) ?>
                         </p>
