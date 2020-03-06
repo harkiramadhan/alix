@@ -13,7 +13,7 @@
                 <div class="col-xl-10">
                     <div class="card">
                         <div class="form-group-sm">
-                            <input type="text" class="form-control form-control-sm form-control-alternative" placeholder="Cari ..." id="search">
+                            <input type="text" class="form-control form-control-sm form-control-alternative" placeholder="Cari ..." id="myInput">
                         </div>
                     </div>
                 </div>
@@ -30,19 +30,19 @@
         <div class="col-xl-12 mt-2">
             <div class="card shadow">
                 <div class="table-responsive">
-                    <table class="table table align-items-center table-flush table-hover table-sm" id="csiswa">
+                    <table class="table table-flush table-hover table-sm">
                         <thead class="thead-light">
                             <tr>
-                                <th width="10px;">No</th>
-                                <th width="10px;">Noujian</th>
+                                <th width="5px;">No</th>
+                                <th width="5px;">Noujian</th>
                                 <th>Nama</th>
-                                <th width="10px;">L/P</th>
-                                <th width="10px;">Asal Sekolah</th>
-                                <th width="10px;" class="text-center">Status</th>
-                                <th width="10px;" class="text-center">Action</th>
+                                <th width="5px;">L/P</th>
+                                <th width="5px;">Asal Sekolah</th>
+                                <th width="5px;" class="text-center">Status</th>
+                                <th width="5px;" class="text-center">Action</th>
                             </tr>
                         </thead>
-                        <tbody>
+                        <tbody id="myTable" class="table_csiswa">
                             
                         </tbody>
                     </table>
