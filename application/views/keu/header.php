@@ -87,13 +87,18 @@
                 <!-- Navigation -->
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link <?php if($this->uri->segment(1) == "dashboard"){echo "active";} ?>" href="<?= site_url('dashboard') ?>">
+                        <a class="nav-link <?php if($this->uri->segment(1) == "keuangan" && $this->uri->segment(2) == NULL){echo "active";} ?>" href="<?= site_url('keuangan') ?>">
                             <i class="ni ni-tv-2 text-default"></i> Dashboard
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link <?php if($this->uri->segment(1) == "csiswa"){echo "active";} ?>" href="<?= site_url('csiswa') ?>">
-                            <i class="ni ni-circle-08 text-default"></i> Pendaftaran
+                        <a class="nav-link <?php if($this->uri->segment(1) == "keuangan" && $this->uri->segment(2) == "siswa"){echo "active";} ?>" href="<?= site_url('keuangan/siswa') ?>">
+                            <i class="ni ni-circle-08 text-default"></i> Data Siswa
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link <?php if($this->uri->segment(1) == "keuangan" && $this->uri->segment(2) == "pembayaran"){echo "active";} ?>" href="<?= site_url('keuangan/pembayaran') ?>">
+                            <i class="ni ni-money-coins text-default"></i> Pembayaran 
                         </a>
                     </li>
                 </ul>
