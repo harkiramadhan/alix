@@ -47,6 +47,7 @@ class Gallery extends CI_Controller{
         $jenis = $this->input->post('jenis', TRUE);
         $idgallery = $this->input->post('idgallery', TRUE);
         $idgambar = $this->input->post('idgambar', TRUE);
+        
         if($jenis == "tambah"){
             $config['upload_path']      = './assets/home/img/content';  
             $config['allowed_types']    = 'jpg|jpeg|png|gif'; 
@@ -99,7 +100,7 @@ class Gallery extends CI_Controller{
             }
 
             if($this->db->affected_rows() > 0){
-                $this->session->set_flashdata('sukses', "Berita Berhasil Di Hapus");
+                $this->session->set_flashdata('sukses', "Gambar Berhasil Di Hapus");
                 redirect($_SERVER['HTTP_REFERER']);
             }
         }elseif($jenis == "tambah_gallery"){
@@ -219,6 +220,15 @@ class Gallery extends CI_Controller{
                 }
             }else{
                 $this->session->set_flashdata('error', "Gambar Gagal Di Tambahkan");
+                redirect($_SERVER['HTTP_REFERER']);
+            }
+        }elseif($jenis == "deleteGambarAlbum"){
+            $getGambar = $this->db->get_where('gallery_detail', ['id' => $idgambar])->row();
+            unlink("./assets/home/img/content/".$getGambar->img);
+            $this->db->where('id', $idgambar);
+            $this->db->delete('gallery_detail');
+            if($this->db->affected_rows() > 0){
+                $this->session->set_flashdata('sukses', "Gambar Berhasil Di Hapus");
                 redirect($_SERVER['HTTP_REFERER']);
             }
         }
@@ -448,9 +458,33 @@ class Gallery extends CI_Controller{
         ?>
             <div class="col-md-4 mt-3">
                 <img id="image-preview" class="rounded" style="height: 100%; width: 100%" alt="image preview" src="<?= base_url('./assets/home/img/content/' . $dg->img) ?>">
+                <div class="row mt-2">
+                    <div class="col-12 text-left">
+                            <button class="btn btn-sm btn-warning delete" data-id="<?= $dg->id ?>" data-toggle="tooltip" data-placement="bottom" title="Hapus"><i class="fas fa-trash"></i>&nbsp; Hapus</button>
+                    </div>
+                </div>
             </div>
         <?php
-        }}
+        }
+        ?>
+            <script>
+                $('.delete').click(function(){
+                    var idgambar = $(this).attr('data-id');
+                    var jenis = "deleteGambarAlbum";
+
+                    $.ajax({
+                        url: '<?= site_url('backend/gallery/action') ?>',
+                        type: 'post',
+                        data: {idgambar : idgambar, jenis : jenis},
+                        success:function(){
+                            location.reload();
+                        }
+                    });
+                });
+            </script>
+            <div class="col-12 pb-3 mb-3"></div>
+        <?php
+        }
     }
 
     function list_background(){
