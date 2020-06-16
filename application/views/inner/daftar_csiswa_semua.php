@@ -24,7 +24,7 @@
          <div class="tab-content" id="myTabContent">
             <div class="tab-pane fade show active" id="tabs-icons-text-1" role="tabpanel" aria-labelledby="tabs-icons-text-1-tab">
                 <input type="text" class="form-control form-control-alternative form-control-sm" id="myInput" placeholder="Cari Siswa Ter- Konfirmasi .... ">
-                <div class="table-responsive mt-4">
+                <div class="table-responsive mt-4 bg-white">
                     <table class="table table-flush table-hover table-sm">
                         <thead class="thead-light">
                             <tr>
@@ -44,7 +44,7 @@
             </div>
             <div class="tab-pane fade" id="tabs-icons-text-2" role="tabpanel" aria-labelledby="tabs-icons-text-2-tab">
                 <input type="text" class="form-control form-control-alternative form-control-sm" id="myInput2" placeholder="Cari Siswa Belum Konfirmasi .... ">
-                <div class="table-responsive mt-4">
+                <div class="table-responsive mt-4 bg-white">
                     <table class="table table-flush table-hover table-sm">
                         <thead class="thead-light">
                             <tr>
@@ -64,7 +64,7 @@
             </div>
             <div class="tab-pane fade" id="tabs-icons-text-3" role="tabpanel" aria-labelledby="tabs-icons-text-3-tab">
                 <input type="text" class="form-control form-control-alternative form-control-sm" id="myInput3" placeholder="Cari Siswa Ter- Hapus .... ">
-                <div class="table-responsive mt-4">
+                <div class="table-responsive mt-4 bg-white">
                     <table class="table table-flush table-hover table-sm">
                         <thead class="thead-light">
                             <tr>
