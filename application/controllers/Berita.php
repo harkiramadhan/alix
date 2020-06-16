@@ -18,7 +18,18 @@ class Berita extends CI_Controller{
     }
 
     function d($id){
-        echo $id;
+        $this->db->select('*');
+        $this->db->from('berita');
+        $this->db->where([
+            'id' => $id
+        ]);
+        $var['berita'] = $this->db->get()->row();
+        $var['bg'] = $this->M_Sekolah->get_img("bg")->row();
+        $var['sekolah'] = $this->db->get_Where('sekolah', ['id'=> 1])->row();
+
+        $this->load->view('home/layout/header');
+        $this->load->view('home/detail_berita', $var);
+        $this->load->view('home/layout/footer');
     }
 
     // // // AJAX // // //
