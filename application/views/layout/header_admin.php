@@ -92,8 +92,13 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link <?php if($this->uri->segment(1) == "csiswa"){echo "active";} ?>" href="<?= site_url('csiswa') ?>">
+                        <a class="nav-link <?php if($this->uri->segment(1) == "csiswa" && $this->uri->segment(2) == NULL){echo "active";} ?>" href="<?= site_url('csiswa') ?>">
                             <i class="ni ni-circle-08 text-default"></i> Pendaftaran
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link <?php if($this->uri->segment(1) == "csiswa" && $this->uri->segment(2) == "all"){echo "active";} ?>" href="<?= site_url('csiswa/all') ?>">
+                            <i class="ni ni-circle-08 text-default"></i> Calon Siswa
                         </a>
                     </li>
                 </ul>

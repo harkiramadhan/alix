@@ -29,6 +29,37 @@ class M_Csiswa extends CI_Model{
         return $this->db->get();
     }
 
+    function get_conf(){
+        $this->db->select('*');
+        $this->db->from('view_siswa');
+        $this->db->where([
+            'konfirmasi' => "done"
+        ]);
+        $this->db->or_where('konfirmasi !=' , "deleted");
+        $this->db->order_by('nama', "ASC");
+        return $this->db->get();
+    }
+
+    function get_not(){
+        $this->db->select('*');
+        $this->db->from('view_siswa');
+        $this->db->where([
+            'konfirmasi' => NULL,
+        ]);
+        $this->db->order_by('nama', "ASC");
+        return $this->db->get();
+    }
+
+    function get_removed(){
+        $this->db->select('*');
+        $this->db->from('view_siswa');
+        $this->db->where([
+            'konfirmasi' => "deleted",
+        ]);
+        $this->db->order_by('nama', "ASC");
+        return $this->db->get();
+    }
+
     function get_BiodataOrtu($idcsiswa, $jenis){
         $this->db->select('*');
         $this->db->from('view_ortu');
