@@ -20,10 +20,11 @@
             </li>
         </ul>
     </div>
-    <div class="card shadow">
+    
          <div class="tab-content" id="myTabContent">
             <div class="tab-pane fade show active" id="tabs-icons-text-1" role="tabpanel" aria-labelledby="tabs-icons-text-1-tab">
-                <div class="table-responsive">
+                <input type="text" class="form-control form-control-alternative form-control-sm" id="myInput" placeholder="Cari Siswa Ter- Konfirmasi .... ">
+                <div class="table-responsive mt-4">
                     <table class="table table-flush table-hover table-sm">
                         <thead class="thead-light">
                             <tr>
@@ -42,7 +43,8 @@
                 </div>
             </div>
             <div class="tab-pane fade" id="tabs-icons-text-2" role="tabpanel" aria-labelledby="tabs-icons-text-2-tab">
-                <div class="table-responsive">
+                <input type="text" class="form-control form-control-alternative form-control-sm" id="myInput2" placeholder="Cari Siswa Belum Konfirmasi .... ">
+                <div class="table-responsive mt-4">
                     <table class="table table-flush table-hover table-sm">
                         <thead class="thead-light">
                             <tr>
@@ -54,14 +56,15 @@
                                 <th width="5px;" class="text-center">Action</th>
                             </tr>
                         </thead>
-                        <tbody id="myTable" class="table_belum">
+                        <tbody id="myTable2" class="table_belum">
                             
                         </tbody>
                     </table>
                 </div>
             </div>
             <div class="tab-pane fade" id="tabs-icons-text-3" role="tabpanel" aria-labelledby="tabs-icons-text-3-tab">
-                <div class="table-responsive">
+                <input type="text" class="form-control form-control-alternative form-control-sm" id="myInput3" placeholder="Cari Siswa Ter- Hapus .... ">
+                <div class="table-responsive mt-4">
                     <table class="table table-flush table-hover table-sm">
                         <thead class="thead-light">
                             <tr>
@@ -73,11 +76,11 @@
                                 <th width="5px;" class="text-center">Action</th>
                             </tr>
                         </thead>
-                        <tbody id="myTable" class="table_deleted">
+                        <tbody id="myTable3" class="table_deleted">
                             
                         </tbody>
                     </table>
                 </div>
             </div>
         </div>
-    </div>
+        
