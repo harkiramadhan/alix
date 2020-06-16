@@ -35,26 +35,23 @@ class Home extends CI_Controller{
             <div class="col-md-4">
                 <div class="card card-plain card-blog">
                   <div class="card-header card-header-image">
-                    <a href="#pablo">
-                        <img class="img img-raised" src="<?= base_url('/assets/home/img/content/'.$row->img) ?>">
+                    <a href="<?= site_url('berita/d/' . $row->id) ?>">
+                        <img class="img img-raised" style="max-height: 200px;" src="<?= base_url('/assets/home/img/content/'.$row->img) ?>">
                     </a>
                     <div class="colored-shadow" style="background-image: url('<?= base_url('/assets/home/img/content/'.$row->img) ?>';); opacity: 1;"></div>
                     </div>
                     <div class="card-body">
                         <h6 class="card-category text-info"></h6>
                         <h4 class="card-title">
-                        <a href="#pablo"><?= $row->judul ?></a> <br>
+                        <a href="<?= site_url('berita/d/' . $row->id) ?>"><?= $row->judul ?></a> <br>
                         
                         <?php if($getLabel->num_rows() > 0): ?>
                             <?php foreach($getLabel->result() as $l){ ?>
                                 <span class="badge <?= $l->badge ?> mr-1"><?= $l->label ?></span>
                             <?php } ?>
                         <?php endif; ?>
+                        <p class="mt-0 mb-0"><small><?= date_indo(date('Y-m-d', strtotime($row->timestamp))) ?></small></p>
                         </h4>
-                        <small><?= date_indo(date('Y-m-d', strtotime($row->timestamp))) ?></small>
-                        <p class="card-description">
-                        <?= substr($row->konten, 0, 100) ?>
-                        </p>
                     </div>
                 </div>
             </div>
@@ -80,17 +77,14 @@ class Home extends CI_Controller{
                 <div class="card card-plain card-blog mt-0">
                     <div class="card-body pt-0 mb-0 pb-0">
                         <h4 class="card-title">
-                        <a href="#pablo"><?= $row->judul ?></a> <br>
-                        <p class="mt-0 mb-0"><small>2020-20-01</small></p>
+                        <a href="<?= site_url('berita/d/' . $row->id ) ?>"><?= $row->judul ?></a> <br>
                         <?php if($getLabel->num_rows() > 0): ?>
                             <?php foreach($getLabel->result() as $l){ ?>
                                 <span class="badge <?= $l->badge ?> mr-1"><?= $l->label ?></span>
                             <?php } ?>
                         <?php endif; ?>
+                        <p class="mt-0 mb-0"><small><?= date_indo(date('Y-m-d', strtotime($row->timestamp))) ?></small></p>
                         </h4>
-                        <p class="card-description">
-                            <?= substr($row->konten, 0, 50) ?>
-                        </p>
                     </div>
                 </div>
             <?php } ?>
@@ -113,7 +107,7 @@ class Home extends CI_Controller{
             <div class="col-md-3">
                 <div class="card card-plain card-blog gallery_<?= $row->id ?>" id="<?= $row->id ?>" style="cursor: pointer">
                     <div class="card-header card-header-image">
-                        <img class="img img-raised" src="<?= base_url('/assets/home/img/content/'.$row->img) ?>">
+                        <img class="img img-raised" style="max-height: 150px;" src="<?= base_url('/assets/home/img/content/'.$row->img) ?>">
                         <div class="colored-shadow" style="background-image: url('<?= base_url('/assets/home/img/content/'.$row->img) ?>'); opacity: 1;"></div>
                     </div>
                     <div class="card-body">

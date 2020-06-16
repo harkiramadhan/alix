@@ -25,8 +25,7 @@ class Gallery extends CI_Controller{
             <div class="col-md-3">
                 <div class="card card-plain card-blog gallery_<?= $row->id ?>" id="<?= $row->id ?>" style="cursor: pointer">
                     <div class="card-header card-header-image">
-                        <img class="img img-raised" src="<?= base_url('/assets/home/img/content/'.$row->img) ?>">
-                        <div class="colored-shadow" style="background-image: url('<?= base_url('/assets/home/img/content/'.$row->img) ?>'); opacity: 1;"></div>
+                        <img class="img img-raised" style="max-height: 170px" src="<?= base_url('/assets/home/img/content/'.$row->img) ?>">
                     </div>
                     <div class="card-body">
                         <h4 class="card-title"><?= $row->judul ?></h4>

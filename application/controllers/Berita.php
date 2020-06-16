@@ -17,6 +17,10 @@ class Berita extends CI_Controller{
         $this->load->view('home/layout/footer');
     }
 
+    function d($id){
+        echo $id;
+    }
+
     // // // AJAX // // //
     function list_berita(){
         $getBerita = $this->M_Berita->get_AllBerita();
@@ -27,8 +31,9 @@ class Berita extends CI_Controller{
                     <div class="col-md-4">
                         <div class="card card-plain card-blog">
                             <div class="card-header card-header-image">
-                                <img class="img img-raised" src="<?= base_url('/assets/home/img/content/'.$row->img) ?>">
-                                <div class="colored-shadow" style="background-image: url('<?= base_url('/assets/home/img/content/'.$row->img) ?>'); opacity: 1;"></div>
+                                <a href="<?= site_url('berita/d/' . $row->id) ?>">
+                                    <img class="img img-raised" style="max-height: 200px;" src="<?= base_url('/assets/home/img/content/'.$row->img) ?>">
+                                </a>
                             </div>
                             <div class="card-body">
                                 <h6 class="card-category text-info">
@@ -41,11 +46,9 @@ class Berita extends CI_Controller{
                                 <?php endif; ?>
                                 </h6>
                                 <h4 class="card-title">
-                                    <a href="#pablo"><?= $row->judul ?></a>
+                                    <a href="<?= site_url('berita/d/' . $row->id ) ?>"><?= $row->judul ?></a>
+                                    <p class="mt-0 mb-0"><small><?= date_indo(date('Y-m-d', strtotime($row->timestamp))) ?></small></p>
                                 </h4>
-                                <p class="card-description">
-                                    <?= substr($row->konten, 0, 100) ?>
-                                </p>
                             </div>
                         </div>
                     </div>
@@ -64,8 +67,9 @@ class Berita extends CI_Controller{
                     <div class="col-md-4">
                         <div class="card card-plain card-blog">
                             <div class="card-header card-header-image">
-                                <img class="img img-raised" src="<?= base_url('/assets/home/img/content/'.$row->img) ?>">
-                                <div class="colored-shadow" style="background-image: url('<?= base_url('/assets/home/img/content/'.$row->img) ?>'); opacity: 1;"></div>
+                                <a href="<?= site_url('berita/d/' . $row->id) ?>">
+                                    <img class="img img-raised" style="max-height: 200px;" src="<?= base_url('/assets/home/img/content/'.$row->img) ?>">
+                                </a>
                             </div>
                             <div class="card-body">
                                 <h6 class="card-category text-info">
@@ -78,11 +82,9 @@ class Berita extends CI_Controller{
                                 <?php endif; ?>
                                 </h6>
                                 <h4 class="card-title">
-                                    <a href="#pablo"><?= $row->judul ?></a>
+                                    <a href="<?= site_url('berita/d/' . $row->id ) ?>"><?= $row->judul ?></a>
+                                    <p class="mt-0 mb-0"><small><?= date_indo(date('Y-m-d', strtotime($row->timestamp))) ?></small></p>
                                 </h4>
-                                <p class="card-description">
-                                    <?= substr($row->konten, 0, 100) ?>
-                                </p>
                             </div>
                         </div>
                     </div>
