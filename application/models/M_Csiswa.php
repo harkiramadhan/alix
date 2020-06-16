@@ -21,6 +21,10 @@ class M_Csiswa extends CI_Model{
     function get_allCsiswa(){
         $this->db->select('*');
         $this->db->from('view_siswa');
+        $this->db->where([
+            'konfirmasi' => NULL
+        ]);
+        $this->db->or_where('konfirmasi !=' , "deleted");
         $this->db->order_by('nama', "ASC");
         return $this->db->get();
     }
